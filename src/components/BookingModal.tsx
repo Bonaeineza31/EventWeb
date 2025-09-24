@@ -1,0 +1,1 @@
+// This component has been removed - booking now uses dedicated pages instead of modals

@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from "lucide-react";
 import { motion } from "motion/react";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 
 export function NewContact() {
   const [formData, setFormData] = useState({

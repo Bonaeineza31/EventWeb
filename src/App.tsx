@@ -15,7 +15,21 @@ import { Toaster } from "./components/ui/sonner";
 export default function App() {
   const [currentView, setCurrentView] = useState<'home' | 'destination' | 'booking-packages' | 'booking-form'>('home');
   const [selectedDestination, setSelectedDestination] = useState(null);
-  const [selectedPackage, setSelectedPackage] = useState(null);
+  type PackageType = {
+    id: any;
+    name: any;
+    location: any;
+    image: any;
+    duration: any;
+    price: number;
+    category: any;
+    rating: any;
+    description: any;
+    highlights: any;
+    groupSize: any;
+  };
+
+  const [selectedPackage, setSelectedPackage] = useState<PackageType | null>(null);
 
   const handleDestinationClick = (index: number) => {
     setSelectedDestination(destinationsData[index]);

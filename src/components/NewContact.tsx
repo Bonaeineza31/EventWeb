@@ -42,7 +42,7 @@ export function NewContact() {
     {
       icon: Mail,
       title: "Email Us",
-      info: "hello@rwandaadventures.com",
+      info: "hello",
       subtext: "We respond within 2 hours",
       color: "text-blue-600"
     },
@@ -127,7 +127,7 @@ export function NewContact() {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="john@company.com"
+                        placeholder="john"
                         className="h-12"
                       />
                     </div>

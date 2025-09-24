@@ -17,7 +17,7 @@ import {
   CheckCircle,
   AlertCircle
 } from "lucide-react";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 
 interface BookingFormPageProps {
   onBack: () => void;
@@ -149,7 +149,7 @@ export function BookingFormPage({ onBack, packageData }: BookingFormPageProps) {
                       <Label htmlFor="numberOfPeople">Number of People *</Label>
                       <Select 
                         value={formData.numberOfPeople.toString()} 
-                        onValueChange={(value) => handleInputChange("numberOfPeople", parseInt(value))}
+                        onValueChange={(value:any) => handleInputChange("numberOfPeople", parseInt(value))}
                       >
                         <SelectTrigger className="mt-1">
                           <SelectValue placeholder="Select group size" />

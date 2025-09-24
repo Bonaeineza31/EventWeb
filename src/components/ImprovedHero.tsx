@@ -81,7 +81,7 @@ export function ImprovedHero({ onBookNowClick }: ImprovedHeroProps) {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl lg:text-7xl mb-12 max-w-5xl mx-auto leading-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
-              Beyond the Conference Walls
+              Beyond the Conference Hall
             </span>
           </h1>
           

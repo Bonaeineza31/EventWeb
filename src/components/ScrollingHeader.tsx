@@ -63,10 +63,10 @@ export function ScrollingHeader({ onBookNowClick }: ScrollingHeaderProps) {
             <div>
               <h1 className={`text-xl font-bold ${
                 isScrolled ? 'text-gray-800' : 'text-white'
-              }`}>Events&Conference Tours</h1>
+              }`}>Rwanda Adventures</h1>
               <p className={`text-xs ${
                 isScrolled ? 'text-gray-500' : 'text-white/80'
-              }`}>Beyond Conference Hall</p>
+              }`}>Beyond Conference Halls</p>
             </div>
           </div>
           

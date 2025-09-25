@@ -1,4 +1,4 @@
-import { DestinationData } from "./DestinationDetailModal";
+import type { DestinationData } from "../types";
 
 export const destinationsData: DestinationData[] = [
   {

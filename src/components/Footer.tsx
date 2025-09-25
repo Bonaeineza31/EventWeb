@@ -1,1 +1,4 @@
-// This component has been removed - functionality moved to NewFooter.tsx
+// This component is no longer used - replaced by NewFooter.tsx
+export default function Footer() {
+  return null;
+}

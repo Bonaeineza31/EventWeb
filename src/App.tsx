@@ -1,35 +1,24 @@
 import { useState } from "react";
-import { ScrollingHeader } from "./components/ScrollingHeader";
+import { UpdatedScrollingHeader } from "./components/UpdatedScrollingHeader";
 import { ImprovedHero } from "./components/ImprovedHero";
-import { ModernDestinationShowcase } from "./components/ModernDestinationShowcase";
-import { WhyChooseUs } from "./components/WhyChooseUs";
+import { TourTips } from "./components/TourTips";
 import { Tours } from "./components/Tours";
 import { NewContact } from "./components/NewContact";
 import { NewFooter } from "./components/NewFooter";
 import { DestinationPage } from "./components/DestinationPage";
 import { BookingPackagesPage } from "./components/BookingPackagesPage";
-import { BookingFormPage } from "./components/BookingFormPage";
+import { UpdatedBookingFormPage } from "./components/UpdatedBookingFormPage";
+import { QuickQuoteModal } from "./components/QuickQuoteModal";
 import { destinationsData } from "./components/destinationData";
 import { Toaster } from "./components/ui/sonner";
+import type { DestinationData, PackageData, ViewType, PreviousViewType } from "./types";
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'destination' | 'booking-packages' | 'booking-form'>('home');
-  const [selectedDestination, setSelectedDestination] = useState(null);
-  type PackageType = {
-    id: any;
-    name: any;
-    location: any;
-    image: any;
-    duration: any;
-    price: number;
-    category: any;
-    rating: any;
-    description: any;
-    highlights: any;
-    groupSize: any;
-  };
-
-  const [selectedPackage, setSelectedPackage] = useState<PackageType | null>(null);
+  const [currentView, setCurrentView] = useState<ViewType>('home');
+  const [selectedDestination, setSelectedDestination] = useState<DestinationData | null>(null);
+  const [selectedPackage, setSelectedPackage] = useState<PackageData | null>(null);
+  const [isQuickQuoteOpen, setIsQuickQuoteOpen] = useState(false);
+  const [previousView, setPreviousView] = useState<PreviousViewType>('home');
 
   const handleDestinationClick = (index: number) => {
     setSelectedDestination(destinationsData[index]);
@@ -40,8 +29,13 @@ export default function App() {
     setCurrentView('booking-packages');
   };
 
-  const handleBookPackage = (packageData: any) => {
+  const handleQuickQuoteClick = () => {
+    setIsQuickQuoteOpen(true);
+  };
+
+  const handleBookPackage = (packageData: PackageData) => {
     setSelectedPackage(packageData);
+    setPreviousView('booking-packages');
     setCurrentView('booking-form');
   };
 
@@ -62,13 +56,13 @@ export default function App() {
     }
   };
 
-  const handleBookFromDestination = (destination: any) => {
+  const handleBookFromDestination = (destination: DestinationData) => {
     // Convert destination to package format for booking
-    const packageData = {
-      id: destination.id,
+    const packageData: PackageData = {
+      id: destination.id || 0,
       name: destination.name,
       location: destination.location,
-      image: destination.gallery[0],
+      image: destination.gallery?.[0] || destination.image,
       duration: destination.duration,
       price: parseInt(destination.price.replace('$', '')),
       category: destination.category,
@@ -78,12 +72,30 @@ export default function App() {
       groupSize: destination.groupSize
     };
     setSelectedPackage(packageData);
+    setPreviousView('destination');
+    setCurrentView('booking-form');
+  };
+
+  const handleDirectBookFromTour = (tourData: PackageData) => {
+    setSelectedPackage(tourData);
+    setPreviousView('home');
     setCurrentView('booking-form');
   };
 
   const handleBackToHome = () => {
     setCurrentView('home');
     setSelectedDestination(null);
+    setSelectedPackage(null);
+  };
+
+  const handleBackFromBookingForm = () => {
+    if (previousView === 'destination' && selectedDestination) {
+      setCurrentView('destination');
+    } else if (previousView === 'booking-packages') {
+      setCurrentView('booking-packages');
+    } else {
+      setCurrentView('home');
+    }
     setSelectedPackage(null);
   };
 
@@ -121,8 +133,8 @@ export default function App() {
   if (currentView === 'booking-form' && selectedPackage) {
     return (
       <>
-        <BookingFormPage
-          onBack={handleBackToPackages}
+        <UpdatedBookingFormPage
+          onBack={handleBackFromBookingForm}
           packageData={selectedPackage}
         />
         <Toaster />
@@ -132,13 +144,13 @@ export default function App() {
 
   return (
     <div className="min-h-screen">
-      <ScrollingHeader onBookNowClick={handleBookNowClick} />
+      <UpdatedScrollingHeader onBookNowClick={handleBookNowClick} onQuickQuoteClick={handleQuickQuoteClick} />
       <ImprovedHero onBookNowClick={handleBookNowClick} />
-      <ModernDestinationShowcase onDestinationClick={handleDestinationClick} onBookNowClick={handleBookNowClick} />
-      <WhyChooseUs />
-      <Tours onBookNowClick={handleBookNowClick} onLearnMoreClick={handleTourLearnMore} />
+      <Tours onBookNowClick={handleQuickQuoteClick} onDirectBookClick={handleDirectBookFromTour} onLearnMoreClick={handleTourLearnMore} />
+      <TourTips />
       <NewContact />
       <NewFooter />
+      <QuickQuoteModal isOpen={isQuickQuoteOpen} onClose={() => setIsQuickQuoteOpen(false)} />
       <Toaster />
     </div>
   );

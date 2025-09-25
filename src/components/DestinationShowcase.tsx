@@ -1,1 +1,4 @@
-// This component has been removed - functionality moved to ModernDestinationShowcase.tsx
+// This component is no longer used - functionality integrated into other components
+export default function DestinationShowcase() {
+  return null;
+}

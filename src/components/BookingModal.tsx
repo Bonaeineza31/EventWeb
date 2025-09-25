@@ -1,1 +1,4 @@
-// This component has been removed - booking now uses dedicated pages instead of modals
+// This component is no longer used - functionality integrated into other components
+export default function BookingModal() {
+  return null;
+}

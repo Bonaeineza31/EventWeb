@@ -73,7 +73,7 @@ export function ImprovedHero({ onBookNowClick }: ImprovedHeroProps) {
           alt="Rwanda landscape"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/80"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-6 pt-32 pb-20">
@@ -81,9 +81,13 @@ export function ImprovedHero({ onBookNowClick }: ImprovedHeroProps) {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl lg:text-7xl mb-12 max-w-5xl mx-auto leading-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
-              Beyond the Conference Hall
+              Beyond Conference Halls
             </span>
           </h1>
+          
+          <div className="text-2xl md:text-3xl lg:text-4xl text-white mb-8 max-w-4xl mx-auto leading-relaxed">
+            Discover Rwanda's Wonders That Await Outside
+          </div>
           
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed">
             From the iconic Mountain Gorillas in Volcanoes National Park to the game safaris in Akagera, 

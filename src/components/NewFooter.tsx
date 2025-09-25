@@ -54,7 +54,7 @@ export function NewFooter() {
               </div>
               <div>
                 <h3 className="text-xl font-bold">Rwanda Adventures</h3>
-                <p className="text-sm text-gray-400">Beyond Conference Walls</p>
+                <p className="text-sm text-gray-400">Beyond Conference Halls</p>
               </div>
             </div>
             

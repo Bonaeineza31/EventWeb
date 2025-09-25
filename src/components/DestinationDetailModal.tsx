@@ -1,1 +1,4 @@
-// This component has been removed - destination details now use dedicated pages instead of modals
+// This component is no longer used - functionality moved to DestinationPage.tsx
+export default function DestinationDetailModal() {
+  return null;
+}

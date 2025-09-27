@@ -307,7 +307,7 @@ export function DestinationPage({ destination, onBack, onBookNow, onContactExper
                 <Card className="shadow-lg border-0">
                   <CardContent className="p-6 text-center">
                     <h4 className="text-lg text-gray-800 mb-3">Need Help Planning?</h4>
-                    <p className="text-gray-600 text-sm mb-4">Our travel experts are here to help customize your perfect Rwanda adventure.</p>
+                    <p className="text-gray-600 text-sm mb-4">Our travel experts are here to help customize your perfect Events and Conference Tours.</p>
                     <Button 
                       variant="outline" 
                       className="w-full border-primary text-primary hover:bg-primary hover:text-white"

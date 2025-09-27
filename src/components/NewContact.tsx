@@ -88,7 +88,7 @@ export function NewContact() {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Tell us about your schedule and interests. We'll craft the perfect Rwanda adventure 
+            Tell us about your schedule and interests. We'll craft the perfect Events and Conference Tours 
             that fits your timeline and exceeds your expectations.
           </p>
         </motion.div>
@@ -185,7 +185,7 @@ export function NewContact() {
                       <li>✅ We'll review your preferences and create a custom itinerary</li>
                       <li>🚀 You'll receive detailed options within 2 hours</li>
                       <li>💬 We'll schedule a quick call to finalize details</li>
-                      <li>🎉 Your Rwanda adventure is ready to book!</li>
+                      <li>🎉 Your Events and Conference Tours is ready to book!</li>
                     </ul>
                   </div>
 
@@ -252,7 +252,7 @@ export function NewContact() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Rwanda Adventures Location"
+                    title="Events and Conference Tours Location"
                   ></iframe>
                   <div className="absolute top-4 left-4 bg-white px-3 py-2 rounded-lg shadow-md">
                     <p className="text-sm text-gray-800">📍 Find us near Kigali Convention Centre</p>

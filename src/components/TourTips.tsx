@@ -112,7 +112,7 @@ export function TourTips() {
             Essential Tour Tips & What to Bring
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Prepare for your Rwanda adventure with our comprehensive guide. 
+            Prepare for your Events and Conference Tours with our comprehensive guide. 
             We want you to be comfortable, safe, and ready for incredible experiences.
           </p>
         </div>

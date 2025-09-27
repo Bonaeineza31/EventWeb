@@ -111,7 +111,7 @@ export function BookingPackagesPage({ onBack, onBookPackage, onLearnMore }: Book
       price: 1250,
       category: "Adventure",
       rating: "5.0",
-      description: "The ultimate Rwanda adventure combining all major attractions and experiences.",
+      description: "The ultimate Events and Conference Tours combining all major attractions and experiences.",
       highlights: ["All major attractions", "Gorillas & safari", "Cultural immersion"],
       groupSize: "2-8 people"
     }
@@ -316,7 +316,7 @@ export function BookingPackagesPage({ onBack, onBookPackage, onLearnMore }: Book
             <h3 className="text-2xl text-gray-800 mb-4">Need Help Choosing?</h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Not sure which package is right for you? Our travel experts are here to help you 
-              find the perfect Rwanda adventure that fits your schedule and interests.
+              find the perfect Events and Conference Tours that fits your schedule and interests.
             </p>
             <Button onClick={onBack} className="bg-primary hover:bg-primary/90">
               Contact Our Experts

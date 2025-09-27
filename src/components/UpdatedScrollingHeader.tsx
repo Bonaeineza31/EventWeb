@@ -64,7 +64,7 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
             <div>
               <h1 className={`text-xl font-bold ${
                 isScrolled ? 'text-gray-800' : 'text-white'
-              }`}>Rwanda Adventures</h1>
+              }`}>Events and Conference Tours</h1>
               <p className={`text-xs ${
                 isScrolled ? 'text-gray-500' : 'text-white/80'
               }`}>Beyond Conference Halls</p>

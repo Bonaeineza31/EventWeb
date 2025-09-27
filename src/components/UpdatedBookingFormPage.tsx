@@ -84,7 +84,7 @@ export function UpdatedBookingFormPage({ onBack, packageData }: UpdatedBookingFo
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     toast.success("Booking confirmed and payment processed!", {
-      description: "Welcome to your Rwanda adventure!"
+      description: "Welcome to your Events and Conference Tours!"
     });
 
     setIsSubmitting(false);
@@ -107,7 +107,7 @@ export function UpdatedBookingFormPage({ onBack, packageData }: UpdatedBookingFo
             </button>
             <div className="text-right">
               <h1 className="text-2xl text-gray-800">Complete Your Booking</h1>
-              <p className="text-sm text-gray-600">Secure your Rwanda adventure</p>
+              <p className="text-sm text-gray-600">Secure your Events and Conference Tours</p>
             </div>
           </div>
         </div>

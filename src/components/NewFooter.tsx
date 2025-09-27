@@ -53,7 +53,7 @@ export function NewFooter() {
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-orange-400 rounded-full animate-pulse"></div>
               </div>
               <div>
-                <h3 className="text-xl font-bold">Rwanda Adventures</h3>
+                <h3 className="text-xl font-bold">Events and Conference Tourss</h3>
                 <p className="text-sm text-gray-400">Beyond Conference Halls</p>
               </div>
             </div>
@@ -204,7 +204,7 @@ export function NewFooter() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2 text-gray-400 text-sm">
-              <span>© 2024 Rwanda Adventures. Made with</span>
+              <span>© 2024 Events and Conference Tourss. Made with</span>
               <Heart className="w-4 h-4 text-red-500 animate-pulse" />
               <span>in Rwanda</span>
             </div>

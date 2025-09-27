@@ -1,5 +1,3 @@
-// Type definitions for the Rwanda Adventures application
-
 export interface DestinationData {
   id?: number;
   name: string;
@@ -17,6 +15,12 @@ export interface DestinationData {
   gallery?: string[];
   included?: string[];
   notIncluded?: string[];
+  packingList?: string[];
+  testimonial: {
+    text: string;
+    author: string;
+    role: string;
+};
   itinerary?: Array<{
     day: string;
     title: string;

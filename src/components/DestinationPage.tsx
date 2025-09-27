@@ -15,7 +15,10 @@ import {
   Award,
   ChevronLeft,
   ChevronRight,
-  ArrowLeft
+  ArrowLeft,
+  CheckCircle,
+  XCircle,
+  Backpack
 } from "lucide-react";
 import { DestinationData } from "./DestinationDetailModal";
 
@@ -23,9 +26,10 @@ interface DestinationPageProps {
   destination: DestinationData;
   onBack: () => void;
   onBookNow: (destination: any) => void;
+  onContactExperts: () => void;
 }
 
-export function DestinationPage({ destination, onBack, onBookNow }: DestinationPageProps) {
+export function DestinationPage({ destination, onBack, onBookNow, onContactExperts }: DestinationPageProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
 
@@ -96,7 +100,7 @@ export function DestinationPage({ destination, onBack, onBookNow }: DestinationP
               
               {/* Image Indicators */}
               <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                {destination.gallery.map((_, index) => (
+                {destination.gallery.map((_:any, index:any) => (
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
@@ -170,7 +174,7 @@ export function DestinationPage({ destination, onBack, onBookNow }: DestinationP
               <div>
                 <h2 className="text-3xl text-gray-800 mb-6">Experience Highlights</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {destination.highlights.map((highlight, index) => (
+                  {destination.highlights?.map((highlight:any, index:any) => (
                     <div key={index} className="flex items-start space-x-3 p-4 bg-gray-50 rounded-xl">
                       <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
                       <span className="text-gray-700">{highlight}</span>
@@ -183,7 +187,7 @@ export function DestinationPage({ destination, onBack, onBookNow }: DestinationP
               <div>
                 <h2 className="text-3xl text-gray-800 mb-6">Detailed Itinerary</h2>
                 <div className="space-y-6">
-                  {destination.itinerary.map((day, index) => (
+                  {destination.itinerary?.map((day:any, index:any) => (
                     <Card key={index} className="border-l-4 border-l-primary shadow-md">
                       <CardContent className="p-6">
                         <div className="flex items-center gap-4 mb-3">
@@ -203,11 +207,13 @@ export function DestinationPage({ destination, onBack, onBookNow }: DestinationP
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-2xl text-gray-800 mb-4 flex items-center gap-3">
-                    <Shield className="w-6 h-6 text-green-600" />
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                      <div className="w-3 h-3 bg-green-600 rounded-full"></div>
+                    </div>
                     What's Included
                   </h3>
                   <ul className="space-y-3">
-                    {destination.includes.map((item, index) => (
+                    {destination.includes?.map((item:any, index:any) => (
                       <li key={index} className="flex items-start space-x-3 text-gray-600">
                         <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
                         <span>{item}</span>
@@ -217,11 +223,13 @@ export function DestinationPage({ destination, onBack, onBookNow }: DestinationP
                 </div>
                 <div>
                   <h3 className="text-2xl text-gray-800 mb-4 flex items-center gap-3">
-                    <span className="text-red-500">✕</span>
+                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    </div>
                     Not Included
                   </h3>
                   <ul className="space-y-3">
-                    {destination.excludes.map((item, index) => (
+                    {destination.excludes?.map((item:any, index:any) => (
                       <li key={index} className="flex items-start space-x-3 text-gray-600">
                         <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
                         <span>{item}</span>
@@ -230,54 +238,83 @@ export function DestinationPage({ destination, onBack, onBookNow }: DestinationP
                   </ul>
                 </div>
               </div>
+
+              {/* Packing List */}
+              {destination.packingList && Array.isArray(destination.packingList) && destination.packingList.length > 0 && (
+                <div>
+                  <h3 className="text-2xl text-gray-800 mb-4 flex items-center gap-3">
+                    <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Backpack className="w-4 h-4 text-primary" />
+                    </div>
+                    What to Pack
+                  </h3>
+                  <p className="text-gray-600 mb-6">Essential items to bring for this experience based on the climate and activities:</p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {destination.packingList.map((item:any, index:any) => (
+                      <div key={index} className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Right Column - Booking */}
             <div className="lg:col-span-1">
               <div className="sticky top-32">
                 {/* Pricing Card */}
-                <Card className="shadow-xl border-0 bg-gradient-to-br from-primary/5 to-green-600/5 mb-8">
+                <Card className="shadow-xl border-0 bg-primary mb-8">
                   <CardContent className="p-8">
                     <div className="text-center mb-8">
-                      <div className="text-4xl text-gray-800 mb-2">{destination.price}</div>
-                      <div className="text-gray-600">per person</div>
+                      <div className="text-4xl text-white mb-2">{destination.price}</div>
+                      <div className="text-white/80">per person</div>
                     </div>
 
                     <Button 
                       onClick={handleBooking}
-                      className="w-full bg-primary hover:bg-primary/90 mb-6 py-4 text-lg"
+                      className="w-full bg-white text-primary hover:bg-gray-100 mb-6 py-4 text-lg"
                     >
                       Book This Adventure
                     </Button>
 
-                    <div className="text-center mb-6">
-                      <div className="text-sm text-gray-600">Free cancellation up to 24 hours</div>
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-center gap-3 text-sm text-white/90">
+                        <CheckCircle className="w-4 h-4 text-white" />
+                        <span>Free cancellation up to 24 hours</span>
+                      </div>
+                      <div className="flex items-center gap-3 text-sm text-white/90">
+                        <CheckCircle className="w-4 h-4 text-white" />
+                        <span>Expert local guides included</span>
+                      </div>
+                      <div className="flex items-center gap-3 text-sm text-white/90">
+                        <CheckCircle className="w-4 h-4 text-white" />
+                        <span>Small group experience</span>
+                      </div>
                     </div>
 
-                    <div className="flex items-center justify-center space-x-6 text-sm text-gray-600">
-                      <button className="flex items-center gap-2 hover:text-primary transition-colors">
+                    <div className="flex items-center justify-center space-x-6 text-sm text-white/70 pt-4 border-t border-white/20">
+                      <button className="flex items-center gap-2 hover:text-white transition-colors">
                         <Heart className="w-4 h-4" />
-                        <span>Save</span>
+                        <span>Save for Later</span>
                       </button>
                     </div>
                   </CardContent>
                 </Card>
 
-                {/* Testimonial */}
-                <Card className="border-0 shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-1 mb-4">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} className="w-4 h-4 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <blockquote className="text-gray-600 mb-4 italic leading-relaxed">
-                      "{destination.testimonial.text}"
-                    </blockquote>
-                    <div>
-                      <div className="text-gray-800">{destination.testimonial.author}</div>
-                      <div className="text-sm text-gray-500">{destination.testimonial.role}</div>
-                    </div>
+                {/* Contact Card */}
+                <Card className="shadow-lg border-0">
+                  <CardContent className="p-6 text-center">
+                    <h4 className="text-lg text-gray-800 mb-3">Need Help Planning?</h4>
+                    <p className="text-gray-600 text-sm mb-4">Our travel experts are here to help customize your perfect Rwanda adventure.</p>
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                      onClick={onContactExperts}
+                    >
+                      Contact Our Experts
+                    </Button>
                   </CardContent>
                 </Card>
               </div>

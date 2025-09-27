@@ -23,7 +23,7 @@ export const destinationsData: DestinationData[] = [
       "Professional wildlife photography tips",
       "Certificate of participation in gorilla conservation"
     ],
-    includes: [
+    included: [
       "Gorilla trekking permits ($1,500 value)",
       "Professional guide and ranger fees",
       "Transportation from Kigali",
@@ -33,7 +33,7 @@ export const destinationsData: DestinationData[] = [
       "Certificate of participation",
       "Emergency evacuation insurance"
     ],
-    excludes: [
+    notIncluded: [
       "International flights",
       "Accommodation (can be arranged)",
       "Personal travel insurance",
@@ -59,6 +59,20 @@ export const destinationsData: DestinationData[] = [
       "https://images.unsplash.com/photo-1620148878899-7c9b16ce9651?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMGdvcmlsbGFzJTIwUndhbmRhJTIwdm9sY2Fub2VzJTIwcGFya3xlbnwxfHx8fDE3NTg2MTUxMTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "https://images.unsplash.com/photo-1667504319000-8133f9021cf8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb3JpbGxhJTIwdHJla2tpbmclMjBSd2FuZGElMjBoaWtpbmd8ZW58MXx8fHwxNzU4NjE1MTIxfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "https://images.unsplash.com/photo-1598793070399-2f095c0a28a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSd2FuZGElMjBmb3Jlc3QlMjBoaWtpbmclMjB0cmFpbHxlbnwxfHx8fDE3NTg2MTUxMjR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    packingList: [
+      "Sturdy hiking boots with good ankle support",
+      "Long-sleeved shirts and trousers (earth tones)",
+      "Rain jacket and waterproof pants",
+      "Light fleece or warm layer",
+      "Hat and sunglasses",
+      "Insect repellent (DEET-based)",
+      "Camera with extra batteries",
+      "Small daypack",
+      "Hand sanitizer and wet wipes",
+      "Personal medications",
+      "Thick gardening gloves for grabbing vegetation",
+      "Gaiters to protect legs from stinging nettles"
     ],
     testimonial: {
       text: "The most incredible wildlife experience of my life! After my conference in Kigali, this gorilla trek was the perfect adventure. Our guide was amazing and the whole experience was seamlessly organized.",
@@ -88,7 +102,7 @@ export const destinationsData: DestinationData[] = [
       "Photography workshops",
       "Sunset game drives"
     ],
-    includes: [
+    included: [
       "Park entrance fees for all days",
       "Professional safari guide",
       "4WD safari vehicle with pop-up roof",
@@ -98,7 +112,7 @@ export const destinationsData: DestinationData[] = [
       "Transportation from Kigali",
       "Park map and wildlife checklist"
     ],
-    excludes: [
+    notIncluded: [
       "Accommodation (can be arranged)",
       "Meals (unless specified)",
       "Personal travel insurance",
@@ -130,6 +144,20 @@ export const destinationsData: DestinationData[] = [
       "https://images.unsplash.com/photo-1547036967-23d11aacaee0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsaW9uJTIwQWZyaWNhJTIwc2FmYXJpfGVufDF8fHx8MTc1ODYxNTI3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
       "https://images.unsplash.com/photo-1516426122078-c23e76319801?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnaXJhZmZlJTIwQWZyaWNhJTIwc2FmYXJpfGVufDF8fHx8MTc1ODYxNTI3NHww&ixlib=rb-4.1.0&q=80&w=1080"
     ],
+    packingList: [
+      "Light, breathable clothing in neutral colors",
+      "Wide-brimmed hat and sunglasses",
+      "Comfortable walking shoes",
+      "Binoculars for wildlife viewing",
+      "Camera with telephoto lens",
+      "Sunscreen (SPF 30+)",
+      "Light jacket for early morning drives",
+      "Insect repellent",
+      "Personal water bottle",
+      "Small backpack for day trips",
+      "Power bank for electronic devices",
+      "Quick-dry towel for boat safari"
+    ],
     testimonial: {
       text: "Perfect safari experience after our tech conference! Saw all the Big Five and the organization was flawless. The boat safari was an unexpected highlight.",
       author: "Mike Chen",
@@ -158,7 +186,7 @@ export const destinationsData: DestinationData[] = [
       "Professional primate guides",
       "Forest conservation education"
     ],
-    includes: [
+    included: [
       "Park entrance and activity fees",
       "Canopy walk permits",
       "Chimpanzee tracking permits",
@@ -168,7 +196,7 @@ export const destinationsData: DestinationData[] = [
       "Bottled water and snacks",
       "Trail maps and species guides"
     ],
-    excludes: [
+    notIncluded: [
       "Accommodation (can be arranged)",
       "Meals outside the park",
       "Personal travel insurance",
@@ -200,6 +228,20 @@ export const destinationsData: DestinationData[] = [
       "https://images.unsplash.com/photo-1578662996442-48f60103fc96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGltcGFuemVlJTIwZm9yZXN0fGVufDF8fHx8MTc1ODYxNTI5MXww&ixlib=rb-4.1.0&q=80&w=1080",
       "https://images.unsplash.com/photo-1535262412227-85541e910204?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmVlJTIwY2Fub3B5JTIwd2Fsa3xlbnwxfHx8fDE3NTg2MTUyOTN8MA&ixlib=rb-4.1.0&q=80&w=1080"
     ],
+    packingList: [
+      "Waterproof hiking boots with good grip",
+      "Rain gear (jacket and pants)",
+      "Long-sleeved shirts and pants",
+      "Warm fleece or light jacket",
+      "Thick socks and spare pair",
+      "Waterproof gloves",
+      "Head lamp with extra batteries",
+      "Small waterproof backpack",
+      "Insect repellent",
+      "Personal first aid kit",
+      "Camera with waterproof cover",
+      "Snacks and energy bars"
+    ],
     testimonial: {
       text: "The canopy walk was absolutely magical! Perfect adventure after our environmental conference. The chimpanzee tracking was the highlight of my entire Rwanda trip.",
       author: "Dr. Emma Wilson",
@@ -228,7 +270,7 @@ export const destinationsData: DestinationData[] = [
       "Stunning sunset photography",
       "Swimming in bilharzia-free waters"
     ],
-    includes: [
+    included: [
       "Boat cruise and island visits",
       "Coffee plantation tour and tasting",
       "Professional guide services",
@@ -238,7 +280,7 @@ export const destinationsData: DestinationData[] = [
       "Cycling equipment rental",
       "Welcome drink at lakeside resort"
     ],
-    excludes: [
+    notIncluded: [
       "Accommodation (can be arranged)",
       "Meals (except coffee tasting)",
       "Personal travel insurance",
@@ -270,6 +312,20 @@ export const destinationsData: DestinationData[] = [
       "https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBwbGFudGF0aW9uJTIwQWZyaWNhfGVufDF8fHx8MTc1ODYxNTMwOXww&ixlib=rb-4.1.0&q=80&w=1080",
       "https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYWtlJTIwc3Vuc2V0JTIwQWZyaWNhfGVufDF8fHx8MTc1ODYxNTMxMXww&ixlib=rb-4.1.0&q=80&w=1080"
     ],
+    packingList: [
+      "Light, casual clothing",
+      "Swimwear and beach towel",
+      "Comfortable walking shoes",
+      "Sandals for lakeside activities",
+      "Light sweater for cool evenings",
+      "Sunscreen and after-sun lotion",
+      "Hat and sunglasses",
+      "Camera for scenic photos",
+      "Personal water bottle",
+      "Light day pack for cycling",
+      "Casual evening wear for dinner",
+      "Personal toiletries and medications"
+    ],
     testimonial: {
       text: "The perfect way to unwind after a hectic conference week. The lake is absolutely beautiful and the coffee tour was fascinating. Highly recommend for anyone needing to recharge!",
       author: "James Rodriguez",
@@ -298,7 +354,7 @@ export const destinationsData: DestinationData[] = [
       "City viewpoints and photo opportunities",
       "Meet local entrepreneurs and innovators"
     ],
-    includes: [
+    included: [
       "Professional city guide",
       "Transportation within Kigali",
       "Entrance fees to all attractions",
@@ -308,7 +364,7 @@ export const destinationsData: DestinationData[] = [
       "Art gallery visits",
       "Hotel pickup and drop-off"
     ],
-    excludes: [
+    notIncluded: [
       "Personal shopping expenses",
       "Additional meals and drinks",
       "Tips for guide and drivers",
@@ -334,6 +390,20 @@ export const destinationsData: DestinationData[] = [
       "https://images.unsplash.com/photo-1578662996442-48f60103fc96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2ElMjBjaXR5JTIwbW9kZXJufGVufDF8fHx8MTc1ODYxNTMyNnww&ixlib=rb-4.1.0&q=80&w=1080",
       "https://images.unsplash.com/photo-1621881882780-3ad7a82e9f52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2ElMjBtYXJrZXQlMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NTg2MTUzMjl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "https://images.unsplash.com/photo-1590736969955-eaa8b2634ed8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2ElMjBhcnQlMjBnYWxsZXJ5fGVufDF8fHx8MTc1ODYxNTMzMXww&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    packingList: [
+      "Comfortable walking shoes",
+      "Smart casual clothing",
+      "Light jacket or cardigan",
+      "Small daypack or shoulder bag",
+      "Camera for city sights",
+      "Sunscreen and hat",
+      "Water bottle",
+      "Notebook for cultural insights",
+      "Cash for market purchases",
+      "Business cards if networking",
+      "Phone charger and power bank",
+      "Respectful attire for memorial visits"
     ],
     testimonial: {
       text: "Incredible to see how much Kigali has transformed. The guide's knowledge of the city's history and development was amazing. Perfect for understanding Rwanda's journey.",

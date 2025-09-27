@@ -81,15 +81,16 @@ export function ImprovedHero({ onBookNowClick }: ImprovedHeroProps) {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl lg:text-7xl mb-12 max-w-5xl mx-auto leading-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
-              Beyond Conference Halls
+              Beyond The Conference Hall
             </span>
+             <div className="text-4xl md:text-6xl lg:text-6xl text-white mb-8 max-w-4xl mx-auto leading-relaxed">
+             Rwanda Wonders Await!
+          </div>
           </h1>
           
-          <div className="text-2xl md:text-3xl lg:text-4xl text-white mb-8 max-w-4xl mx-auto leading-relaxed">
-            Discover Rwanda's Wonders That Await Outside
-          </div>
+         
           
-          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-2xl md:text-3xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed">
             From the iconic Mountain Gorillas in Volcanoes National Park to the game safaris in Akagera, 
             the breathtaking adventure of Nyungwe, vibrant Kigali tours, serene Lake Kivu relaxation, and 
             rich cultural experiences—there's always something for you.

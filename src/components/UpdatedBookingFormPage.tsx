@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Input } from "./ui/input";
@@ -40,8 +40,33 @@ export function UpdatedBookingFormPage({ onBack, packageData }: UpdatedBookingFo
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Calculate discount based on number of people
+  const calculateDiscount = (basePrice: number, numPeople: number) => {
+    let discountPercentage = 0;
+    if (numPeople >= 2) discountPercentage = 5;
+    if (numPeople >= 4) discountPercentage = 10;
+    if (numPeople >= 6) discountPercentage = 15;
+    if (numPeople >= 8) discountPercentage = 20;
+    
+    const discountAmount = (basePrice * discountPercentage) / 100;
+    const discountedPrice = basePrice - discountAmount;
+    
+    return {
+      originalPrice: basePrice,
+      discountedPrice,
+      discountPercentage,
+      discountAmount,
+      totalSavings: discountAmount * numPeople
+    };
+  };
+
+  // Memoize discount calculation to prevent infinite re-renders
+  const discountData = useMemo(() => {
+    return calculateDiscount(packageData.price, formData.numberOfPeople);
+  }, [packageData.price, formData.numberOfPeople]);
+
   const calculateTotal = () => {
-    return packageData.price * formData.numberOfPeople;
+    return Math.round(discountData.discountedPrice * formData.numberOfPeople);
   };
 
   const handleInputChange = (field: string, value: any) => {
@@ -263,6 +288,13 @@ export function UpdatedBookingFormPage({ onBack, packageData }: UpdatedBookingFo
                           <li>• Valid passport required for all participants</li>
                           <li>• Your payment is processed securely via encrypted connection</li>
                         </ul>
+                        <div className="mt-3 p-2 bg-blue-50 border border-blue-200 rounded">
+                          <p className="font-medium text-blue-800 text-xs mb-1">NOTE: Shared Room Occupancy</p>
+                          <p className="text-blue-700 text-xs">
+                            In case of shared room occupancy and a guest wants to pay an extra amount to be in a room alone, 
+                            they can contact us to assist with that arrangement.
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -322,12 +354,27 @@ export function UpdatedBookingFormPage({ onBack, packageData }: UpdatedBookingFo
                     <div className="border-t pt-4">
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-gray-600">Price per person</span>
-                        <span className="text-lg">${packageData.price}</span>
+                        <div className="text-right">
+                          {discountData.discountPercentage > 0 ? (
+                            <div>
+                              <span className="text-gray-400 line-through text-sm">${packageData.price}</span>
+                              <span className="text-lg ml-2">${Math.round(discountData.discountedPrice)}</span>
+                            </div>
+                          ) : (
+                            <span className="text-lg">${packageData.price}</span>
+                          )}
+                        </div>
                       </div>
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-gray-600">Number of people</span>
                         <span className="text-lg">{formData.numberOfPeople}</span>
                       </div>
+                      {discountData.discountPercentage > 0 && (
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-green-600">Group Discount ({discountData.discountPercentage}%)</span>
+                          <span className="text-green-600">-${Math.round(discountData.totalSavings)}</span>
+                        </div>
+                      )}
                       <div className="border-t pt-2 flex justify-between items-center">
                         <span className="font-medium">Total Amount</span>
                         <span className="text-2xl text-primary">${calculateTotal()}</span>

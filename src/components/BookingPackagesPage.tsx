@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { ArrowLeft, Users, Clock, MapPin, ChevronDown } from "lucide-react";
+import { ArrowLeft, Users, Clock, MapPin, ChevronDown, Tag } from "lucide-react";
 
 interface BookingPackagesPageProps {
   onBack: () => void;
@@ -13,6 +14,27 @@ interface BookingPackagesPageProps {
 
 export function BookingPackagesPage({ onBack, onBookPackage, onLearnMore }: BookingPackagesPageProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedPeople, setSelectedPeople] = useState<{[key: number]: number}>({});
+  
+  // Calculate discount based on number of people
+  const calculateDiscount = (basePrice: number, numPeople: number) => {
+    let discountPercentage = 0;
+    if (numPeople >= 2) discountPercentage = 5;
+    if (numPeople >= 4) discountPercentage = 10;
+    if (numPeople >= 6) discountPercentage = 15;
+    if (numPeople >= 8) discountPercentage = 20;
+    
+    const discountAmount = (basePrice * discountPercentage) / 100;
+    const discountedPrice = basePrice - discountAmount;
+    
+    return {
+      originalPrice: basePrice,
+      discountedPrice,
+      discountPercentage,
+      discountAmount,
+      totalSavings: discountAmount * numPeople
+    };
+  };
 
   const packages = [
     {
@@ -97,9 +119,24 @@ export function BookingPackagesPage({ onBack, onBookPackage, onLearnMore }: Book
 
   const categories = ["all", "Wildlife", "Adventure", "Nature", "Relaxation", "Culture"];
 
-  const filteredPackages = selectedCategory === "all" 
-    ? packages 
-    : packages.filter(pkg => pkg.category === selectedCategory);
+  const filteredPackages = useMemo(() => {
+    return selectedCategory === "all" 
+      ? packages 
+      : packages.filter(pkg => pkg.category === selectedCategory);
+  }, [selectedCategory]);
+
+  // Pre-calculate discount data for all packages
+  const packagesWithDiscounts = useMemo(() => {
+    return filteredPackages.map(pkg => {
+      const numPeople = selectedPeople[pkg.id] || 1;
+      const discount = calculateDiscount(pkg.price, numPeople);
+      return {
+        ...pkg,
+        discount,
+        numPeople
+      };
+    });
+  }, [filteredPackages, selectedPeople]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -142,7 +179,7 @@ export function BookingPackagesPage({ onBack, onBookPackage, onLearnMore }: Book
 
         {/* Packages Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredPackages.map((pkg, index) => (
+          {packagesWithDiscounts.map((pkg, index) => (
             <Card key={pkg.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
               <div className="relative">
                 <div className="aspect-[4/3] relative">
@@ -164,8 +201,25 @@ export function BookingPackagesPage({ onBack, onBookPackage, onLearnMore }: Book
                   </div>
 
                   <div className="absolute bottom-4 left-4 right-4">
-                    <div className="text-green-400 text-2xl mb-1">${pkg.price}</div>
-                    <div className="text-white/80 text-sm">per person</div>
+                    <div>
+                      {pkg.discount.discountPercentage > 0 ? (
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <div className="text-white/60 text-lg line-through">${pkg.price}</div>
+                            <Badge className="bg-red-500 text-white text-xs px-2 py-1">
+                              -{pkg.discount.discountPercentage}%
+                            </Badge>
+                          </div>
+                          <div className="text-green-400 text-2xl mb-1">${Math.round(pkg.discount.discountedPrice)}</div>
+                          <div className="text-white/80 text-sm">per person • Save ${Math.round(pkg.discount.discountAmount)}</div>
+                        </div>
+                      ) : (
+                        <div>
+                          <div className="text-green-400 text-2xl mb-1">${pkg.price}</div>
+                          <div className="text-white/80 text-sm">per person</div>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -201,6 +255,38 @@ export function BookingPackagesPage({ onBack, onBookPackage, onLearnMore }: Book
                       </li>
                     ))}
                   </ul>
+                </div>
+
+                {/* People Selector */}
+                <div className="mb-4">
+                  <div className="text-sm text-gray-700 mb-2">Number of People:</div>
+                  <Select 
+                    value={String(selectedPeople[pkg.id] || 1)} 
+                    onValueChange={(value) => setSelectedPeople(prev => ({ ...prev, [pkg.id]: parseInt(value) }))}
+                  >
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select number of people" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                        <SelectItem key={num} value={String(num)}>
+                          {num} {num === 1 ? 'Person' : 'People'}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  
+                  {pkg.discount.discountPercentage > 0 && (
+                    <div className="mt-2 p-2 bg-green-50 rounded-lg border border-green-200">
+                      <div className="flex items-center gap-1 text-green-700 text-sm">
+                        <Tag className="w-4 h-4" />
+                        <span className="font-medium">Group Discount: {pkg.discount.discountPercentage}% OFF</span>
+                      </div>
+                      <div className="text-xs text-green-600 mt-1">
+                        Total savings for {pkg.numPeople} people: ${Math.round(pkg.discount.totalSavings)}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex gap-2">

@@ -64,7 +64,7 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
             <div>
               <h1 className={`text-xl font-bold ${
                 isScrolled ? 'text-gray-800' : 'text-white'
-              }`}>Events&Conference Rwanda</h1>
+              }`}>Rwanda Adventures</h1>
               <p className={`text-xs ${
                 isScrolled ? 'text-gray-500' : 'text-white/80'
               }`}>Beyond Conference Halls</p>
@@ -74,7 +74,7 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
           <nav className="hidden lg:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('home')}
-              className={`transition-colors ${
+              className={`text-lg font-medium transition-colors ${
                 isScrolled 
                   ? 'text-gray-700 hover:text-primary' 
                   : 'text-white hover:text-white/80'
@@ -84,27 +84,27 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
             </button>
             <button 
               onClick={() => scrollToSection('tours')}
-              className={`transition-colors ${
+              className={`text-lg font-medium transition-colors ${
                 isScrolled 
                   ? 'text-gray-700 hover:text-primary' 
                   : 'text-white hover:text-white/80'
               }`}
             >
-              Packages
+              Tour Packages
             </button>
             <button 
               onClick={() => scrollToSection('tour-tips')}
-              className={`transition-colors ${
+              className={`text-lg font-medium transition-colors ${
                 isScrolled 
                   ? 'text-gray-700 hover:text-primary' 
                   : 'text-white hover:text-white/80'
               }`}
             >
-              Tour Tips
+              Travel Tips
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className={`transition-colors ${
+              className={`text-lg font-medium transition-colors ${
                 isScrolled 
                   ? 'text-gray-700 hover:text-primary' 
                   : 'text-white hover:text-white/80'
@@ -156,7 +156,7 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
             <nav className="flex flex-col space-y-4">
               <button 
                 onClick={() => scrollToSection('home')} 
-                className={`text-left transition-colors ${
+                className={`text-left text-lg font-medium transition-colors ${
                   isScrolled 
                     ? 'text-gray-700 hover:text-primary' 
                     : 'text-white hover:text-white/80'
@@ -166,27 +166,27 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
               </button>
               <button 
                 onClick={() => scrollToSection('tours')} 
-                className={`text-left transition-colors ${
+                className={`text-left text-lg font-medium transition-colors ${
                   isScrolled 
                     ? 'text-gray-700 hover:text-primary' 
                     : 'text-white hover:text-white/80'
                 }`}
               >
-                Packages
+                Tour Packages
               </button>
               <button 
                 onClick={() => scrollToSection('tour-tips')} 
-                className={`text-left transition-colors ${
+                className={`text-left text-lg font-medium transition-colors ${
                   isScrolled 
                     ? 'text-gray-700 hover:text-primary' 
                     : 'text-white hover:text-white/80'
                 }`}
               >
-                Tour Tips
+                Travel Tips
               </button>
               <button 
                 onClick={() => scrollToSection('contact')} 
-                className={`text-left transition-colors ${
+                className={`text-left text-lg font-medium transition-colors ${
                   isScrolled 
                     ? 'text-gray-700 hover:text-primary' 
                     : 'text-white hover:text-white/80'

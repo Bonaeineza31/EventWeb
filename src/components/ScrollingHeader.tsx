@@ -63,14 +63,14 @@ export function ScrollingHeader({ onBookNowClick }: ScrollingHeaderProps) {
             <div>
               <h1 className={`text-xl font-bold ${
                 isScrolled ? 'text-gray-800' : 'text-white'
-              }`}>Rwanda Adventures</h1>
+              }`}>Events&Conference Tours</h1>
               <p className={`text-xs ${
                 isScrolled ? 'text-gray-500' : 'text-white/80'
               }`}>Beyond Conference Halls</p>
             </div>
           </div>
           
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden 4xl:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('home')}
               className={`transition-colors ${

@@ -116,10 +116,13 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
 
           <div className="hidden lg:flex items-center space-x-3">
             <Button 
-              variant={isScrolled ? "outline" : "secondary"}
+              variant="outline"
               size="sm"
               onClick={onQuickQuoteClick || onBookNowClick}
-              className={isScrolled ? "" : "border-white/30 text-white hover:bg-white/10"}
+              className={isScrolled ? 
+                "border-gray-300 bg-white text-gray-700 hover:bg-gray-50" : 
+                "border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50"
+              }
             >
               Quick Quote
             </Button>
@@ -196,10 +199,13 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
               </button>
               <div className="flex flex-col space-y-2 pt-4">
                 <Button 
-                  variant={isScrolled ? "outline" : "secondary"} 
+                  variant="outline"
                   size="sm"
                   onClick={onQuickQuoteClick || onBookNowClick}
-                  className={isScrolled ? "" : "border-white/30 text-white hover:bg-white/10"}
+                  className={isScrolled ? 
+                    "border-gray-300 bg-white text-gray-700 hover:bg-gray-50" : 
+                    "border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50"
+                  }
                 >
                   Quick Quote
                 </Button>

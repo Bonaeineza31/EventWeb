@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -10,7 +11,8 @@ interface TourCardProps {
   location: string;
   description: string;
   highlights: string[];
-  imageUrl: string;
+  imageUrl?: string;
+  images?: string[];
   price?: string;
   onLearnMore?: () => void;
   onBookNow?: () => void;
@@ -23,18 +25,34 @@ export function TourCard({
   description, 
   highlights, 
   imageUrl, 
+  images,
   price,
   onLearnMore,
   onBookNow
 }: TourCardProps) {
+  const imageGallery = images || (imageUrl ? [imageUrl] : []);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (imageGallery.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === imageGallery.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [imageGallery.length]);
+
   return (
     <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
         <CardHeader className="p-0">
           <div className="relative h-56 overflow-hidden">
             <ImageWithFallback
-              src={imageUrl}
+              src={imageGallery[currentImageIndex]}
               alt={title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-cover transition-opacity duration-700"
             />
             <div className="absolute top-4 left-4">
               <Badge className="bg-primary text-white">
@@ -46,6 +64,21 @@ export function TourCard({
                 <Badge variant="secondary" className="bg-white text-primary">
                   {price}
                 </Badge>
+              </div>
+            )}
+            {imageGallery.length > 1 && (
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-1.5">
+                {imageGallery.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentImageIndex 
+                        ? 'bg-white w-6' 
+                        : 'bg-white/50 hover:bg-white/75'
+                    }`}
+                  />
+                ))}
               </div>
             )}
           </div>

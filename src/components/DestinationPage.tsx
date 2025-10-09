@@ -7,17 +7,12 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { 
   Star, 
   Clock, 
-  Users, 
-  MapPin, 
   Camera, 
   Heart, 
-  Shield, 
-  Award,
   ChevronLeft,
   ChevronRight,
   ArrowLeft,
   CheckCircle,
-  XCircle,
   Backpack
 } from "lucide-react";
 import { DestinationData } from "./DestinationDetailModal";
@@ -137,30 +132,6 @@ export function DestinationPage({ destination, onBack, onBookNow, onContactExper
 
         {/* Content */}
         <div className="container mx-auto px-6 py-16">
-          {/* Quick Info */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            <div className="text-center p-6 bg-gray-50 rounded-2xl">
-              <Clock className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-sm text-gray-600 mb-1">Duration</div>
-              <div className="text-lg">{destination.duration}</div>
-            </div>
-            <div className="text-center p-6 bg-gray-50 rounded-2xl">
-              <Users className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-sm text-gray-600 mb-1">Group Size</div>
-              <div className="text-lg">{destination.groupSize}</div>
-            </div>
-            <div className="text-center p-6 bg-gray-50 rounded-2xl">
-              <Award className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-sm text-gray-600 mb-1">Difficulty</div>
-              <div className="text-lg">{destination.difficulty}</div>
-            </div>
-            <div className="text-center p-6 bg-gray-50 rounded-2xl">
-              <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-sm text-gray-600 mb-1">Best Time</div>
-              <div className="text-lg">{destination.bestTime}</div>
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Left Column - Details */}
             <div className="lg:col-span-2 space-y-12">
@@ -203,41 +174,7 @@ export function DestinationPage({ destination, onBack, onBookNow, onContactExper
                 </div>
               </div>
 
-              {/* What's Included / Excluded */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-2xl text-gray-800 mb-4 flex items-center gap-3">
-                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                      <div className="w-3 h-3 bg-green-600 rounded-full"></div>
-                    </div>
-                    What's Included
-                  </h3>
-                  <ul className="space-y-3">
-                    {destination.includes?.map((item:any, index:any) => (
-                      <li key={index} className="flex items-start space-x-3 text-gray-600">
-                        <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-2xl text-gray-800 mb-4 flex items-center gap-3">
-                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center">
-                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    </div>
-                    Not Included
-                  </h3>
-                  <ul className="space-y-3">
-                    {destination.excludes?.map((item:any, index:any) => (
-                      <li key={index} className="flex items-start space-x-3 text-gray-600">
-                        <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+
 
               {/* Packing List */}
               {destination.packingList && Array.isArray(destination.packingList) && destination.packingList.length > 0 && (
@@ -280,6 +217,13 @@ export function DestinationPage({ destination, onBack, onBookNow, onContactExper
                     </Button>
 
                     <div className="space-y-3 mb-6">
+                      <div className="flex items-center gap-3 text-white/90">
+                        <Clock className="w-5 h-5 text-white" />
+                        <div>
+                          <div className="text-xs text-white/70">Duration</div>
+                          <div className="text-lg">{destination.duration}</div>
+                        </div>
+                      </div>
                       <div className="flex items-center gap-3 text-sm text-white/90">
                         <CheckCircle className="w-4 h-4 text-white" />
                         <span>Free cancellation up to 24 hours</span>
@@ -307,7 +251,7 @@ export function DestinationPage({ destination, onBack, onBookNow, onContactExper
                 <Card className="shadow-lg border-0">
                   <CardContent className="p-6 text-center">
                     <h4 className="text-lg text-gray-800 mb-3">Need Help Planning?</h4>
-                    <p className="text-gray-600 text-sm mb-4">Our travel experts are here to help customize your perfect Events and Conference Tours.</p>
+                    <p className="text-gray-600 text-sm mb-4">Our travel experts are here to help customize your perfect Rwanda adventure.</p>
                     <Button 
                       variant="outline" 
                       className="w-full border-primary text-primary hover:bg-primary hover:text-white"

@@ -20,7 +20,11 @@ export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: T
         "Wildlife photography opportunities",
         "Professional guide included"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1623005804842-44950138a4ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBa2FnZXJhJTIwTmF0aW9uYWwlMjBQYXJrJTIwUndhbmRhJTIwc2FmYXJpJTIwd2lsZGxpZmV8ZW58MXx8fHwxNzU4NjEzMjQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      images: [
+        "https://images.unsplash.com/photo-1623005804842-44950138a4ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBa2FnZXJhJTIwTmF0aW9uYWwlMjBQYXJrJTIwUndhbmRhJTIwc2FmYXJpJTIwd2lsZGxpZmV8ZW58MXx8fHwxNzU4NjEzMjQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1709686511177-60d6545962fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBa2FnZXJhJTIwd2lsZGxpZmUlMjBlbGVwaGFudHxlbnwxfHx8fDE3NTk5NjQxMzV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "https://images.unsplash.com/photo-1663429975647-3a7f30710049?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSd2FuZGElMjBzYWZhcmklMjBsaW9uc3xlbnwxfHx8fDE3NTk5NjQxMzV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      ],
       price: 425,
       category: "Wildlife"
     },
@@ -36,7 +40,11 @@ export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: T
         "Cultural village visits",
         "Conservation center tour"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1722293094576-424bd9b4aef9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSd2FuZGElMjBtb3VudGFpbiUyMGdvcmlsbGElMjB0cmVra2luZ3xlbnwxfHx8fDE3NTg2MTMyNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      images: [
+        "https://images.unsplash.com/photo-1722293094576-424bd9b4aef9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSd2FuZGElMjBtb3VudGFpbiUyMGdvcmlsbGElMjB0cmVra2luZ3xlbnwxfHx8fDE3NTg2MTMyNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1663924665428-e5b35266f7cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSd2FuZGElMjBnb3JpbGxhJTIwZm9yZXN0fGVufDF8fHx8MTc1OTk2NDEzNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "https://images.unsplash.com/photo-1573090407445-1a75f059eebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMGdvcmlsbGElMjBmYW1pbHl8ZW58MXx8fHwxNzU5OTY0MTM2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      ],
       price: 650,
       category: "Wildlife"
     },
@@ -52,7 +60,11 @@ export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: T
         "Coffee plantation tours",
         "Scenic hiking with panoramic views"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1647849975193-bf78bd1cbf4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxMYWtlJTIwS2l2dSUyMFJ3YW5kYSUyMGJvYXRzfGVufDF8fHx8MTc1ODYxMzI0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      images: [
+        "https://images.unsplash.com/photo-1647849975193-bf78bd1cbf4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxMYWtlJTIwS2l2dSUyMFJ3YW5kYSUyMGJvYXRzfGVufDF8fHx8MTc1ODYxMzI0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1648217720123-6989705a6da5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxMYWtlJTIwS2l2dSUyMGJlYWNofGVufDF8fHx8MTc1OTk2NDEzN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "https://images.unsplash.com/photo-1707537285375-bf1a0ab8dcd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwbGFrZSUyMHN1bnNldHxlbnwxfHx8fDE3NTk5NjQxMzd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      ],
       price: 285,
       category: "Relaxation"
     },
@@ -68,7 +80,11 @@ export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: T
         "Waterfall hiking trails",
         "Tea plantation visits"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1753672036773-2f2861882113?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOeXVuZ3dlJTIwZm9yZXN0JTIwY2Fub3B5JTIwd2Fsa3dheSUyMFJ3YW5kYXxlbnwxfHx8fDE3NTg2MTMyNTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      images: [
+        "https://images.unsplash.com/photo-1753672036773-2f2861882113?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOeXVuZ3dlJTIwZm9yZXN0JTIwY2Fub3B5JTIwd2Fsa3dheSUyMFJ3YW5kYXxlbnwxfHx8fDE3NTg2MTMyNTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1716118804538-44244911b0ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyYWluZm9yZXN0JTIwY2Fub3B5JTIwYnJpZGdlfGVufDF8fHx8MTc1OTk2NDEzN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "https://images.unsplash.com/photo-1715405911530-67c11cfe8e67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGltcGFuemVlJTIwcmFpbmZvcmVzdHxlbnwxfHx8fDE3NTk5NjQxMzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      ],
       price: 385,
       category: "Adventure"
     },
@@ -84,7 +100,10 @@ export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: T
         "Rwandan culinary tasting",
         "Local craft shopping"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1515921560173-3633830cb11a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSd2FuZGElMjBjdWx0dXJhbCUyMGRhbmNlJTIwdHJhZGl0aW9uYWx8ZW58MXx8fHwxNzU4NjEzMjUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      images: [
+        "https://images.unsplash.com/photo-1515921560173-3633830cb11a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSd2FuZGElMjBjdWx0dXJhbCUyMGRhbmNlJTIwdHJhZGl0aW9uYWx8ZW58MXx8fHwxNzU4NjEzMjUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1722958100828-5b3de4c9e812?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwY3JhZnQlMjBtYXJrZXR8ZW58MXx8fHwxNzU5OTY0MTM4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      ],
       price: 150,
       category: "Culture"
     },
@@ -100,7 +119,11 @@ export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: T
         "Coffee tasting experience", 
         "City skyline views from Rebero Hills"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1708772565588-33785e13aa46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSd2FuZGElMjBLaWdhbGklMjBjaXR5c2NhcGUlMjBza3lsaW5lfGVufDF8fHx8MTc1ODYxMzIzOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      images: [
+        "https://images.unsplash.com/photo-1708772565588-33785e13aa46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSd2FuZGElMjBLaWdhbGklMjBjaXR5c2NhcGUlMjBza3lsaW5lfGVufDF8fHx8MTc1ODYxMzIzOXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1648708511872-5426c0f29c27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxLaWdhbGklMjBjaXR5JTIwbW9kZXJufGVufDF8fHx8MTc1OTk2NDEzOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "https://images.unsplash.com/photo-1646186582146-7fb4aedc3579?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSd2FuZGElMjBtZW1vcmlhbCUyMGJ1aWxkaW5nfGVufDF8fHx8MTc1OTk2NDEzOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      ],
       price: 75,
       category: "Culture"
     }
@@ -111,7 +134,7 @@ export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: T
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl text-gray-800 mb-6">
-            Choose Your Events and Conference Tours
+            Choose Your Rwanda Adventure
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Tailored packages for conference attendees with flexible durations. 
@@ -130,7 +153,7 @@ export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: T
                 id: tour.id,
                 name: tour.title,
                 location: tour.location,
-                image: tour.imageUrl,
+                image: tour.images[0],
                 duration: tour.duration,
                 price: tour.price,
                 category: tour.category,

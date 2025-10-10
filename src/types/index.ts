@@ -1,3 +1,5 @@
+// Type definitions for the Rwanda Adventures application
+
 export interface DestinationData {
   id?: number;
   name: string;
@@ -16,11 +18,6 @@ export interface DestinationData {
   included?: string[];
   notIncluded?: string[];
   packingList?: string[];
-  testimonial: {
-    text: string;
-    author: string;
-    role: string;
-};
   itinerary?: Array<{
     day: string;
     title: string;
@@ -42,5 +39,5 @@ export interface PackageData {
   groupSize?: string;
 }
 
-export type ViewType = 'home' | 'destination' | 'booking-packages' | 'booking-form';
-export type PreviousViewType = 'home' | 'destination' | 'booking-packages';
+export type ViewType = 'home' | 'destination' | 'booking-packages' | 'booking-form' | 'contact';
+export type PreviousViewType = 'home' | 'destination' | 'booking-packages' | 'contact';

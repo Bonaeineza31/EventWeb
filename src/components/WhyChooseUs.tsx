@@ -47,7 +47,7 @@ export function WhyChooseUs() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-            Why Choose Events and Conference Tours
+            Why Choose Rwanda Adventures
           </Badge>
           <h2 className="text-3xl md:text-4xl text-gray-800 mb-6">
             Designed for Conference Travelers

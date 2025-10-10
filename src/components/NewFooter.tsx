@@ -2,8 +2,10 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Facebook, Instagram, Linkedin, Twitter, Phone, Mail, MapPin, Heart } from "lucide-react";
 import { motion } from "motion/react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function NewFooter() {
+  const { t } = useLanguage();
   const quickLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
@@ -53,14 +55,13 @@ export function NewFooter() {
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-orange-400 rounded-full animate-pulse"></div>
               </div>
               <div>
-                <h3 className="text-xl font-bold">Events and Conference Tourss</h3>
-                <p className="text-sm text-gray-400">Beyond Conference Halls</p>
+                <h3 className="text-xl font-bold">Rwanda Adventures</h3>
+                <p className="text-sm text-gray-400">{t('footer.tagline')}</p>
               </div>
             </div>
             
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Transforming business trips into unforgettable adventures. 
-              Your trusted partner for discovering Rwanda's magic while maintaining your professional schedule.
+              {t('footer.description')}
             </p>
             
             <div className="flex space-x-4">
@@ -106,18 +107,40 @@ export function NewFooter() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg mb-6 text-white">Quick Links</h3>
+            <h3 className="text-lg mb-6 text-white">{t('footer.quickLinks')}</h3>
             <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <button 
-                    onClick={() => scrollToSection(link.href)}
-                    className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200 block"
-                  >
-                    {link.name}
-                  </button>
-                </li>
-              ))}
+              <li>
+                <button 
+                  onClick={() => scrollToSection('#home')}
+                  className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200 block"
+                >
+                  {t('footer.home')}
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('#tours')}
+                  className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200 block"
+                >
+                  {t('footer.tours')}
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('#tour-tips')}
+                  className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200 block"
+                >
+                  {t('footer.about')}
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('#contact')}
+                  className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200 block"
+                >
+                  {t('footer.contact')}
+                </button>
+              </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200 block">
                   Partnership
@@ -138,18 +161,40 @@ export function NewFooter() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg mb-6 text-white">Our Adventures</h3>
+            <h3 className="text-lg mb-6 text-white">{t('footer.popularTours')}</h3>
             <ul className="space-y-3">
-              {adventures.map((adventure, index) => (
-                <li key={index}>
-                  <button 
-                    onClick={() => scrollToSection('tours')}
-                    className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200 block"
-                  >
-                    {adventure}
-                  </button>
-                </li>
-              ))}
+              <li>
+                <button 
+                  onClick={() => scrollToSection('tours')}
+                  className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200 block"
+                >
+                  {t('footer.gorillaTrekking')}
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('tours')}
+                  className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200 block"
+                >
+                  {t('footer.safariAdventure')}
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('tours')}
+                  className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200 block"
+                >
+                  {t('footer.lakeKivu')}
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('tours')}
+                  className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200 block"
+                >
+                  {t('footer.kigaliTour')}
+                </button>
+              </li>
             </ul>
           </motion.div>
 
@@ -160,7 +205,7 @@ export function NewFooter() {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg mb-6 text-white">Stay Connected</h3>
+            <h3 className="text-lg mb-6 text-white">{t('footer.followUs')}</h3>
             
             <div className="space-y-4 mb-6">
               <div className="flex items-center space-x-3">
@@ -204,7 +249,7 @@ export function NewFooter() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2 text-gray-400 text-sm">
-              <span>© 2024 Events and Conference Tourss. Made with</span>
+              <span>© 2025 Rwanda Adventures. {t('footer.rights')}</span>
               <Heart className="w-4 h-4 text-red-500 animate-pulse" />
               <span>in Rwanda</span>
             </div>

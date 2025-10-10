@@ -6,9 +6,11 @@ import { Card, CardContent, CardHeader } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from "lucide-react";
 import { motion } from "motion/react";
-import { toast } from "sonner";
+import { toast } from "sonner@2.0.3";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function NewContact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -34,30 +36,30 @@ export function NewContact() {
   const contactInfo = [
     {
       icon: Phone,
-      title: "Call or WhatsApp",
+      titleKey: "contact.callWhatsapp",
       info: "+250 788 684 804",
-      subtext: "Available 24/7 for urgent inquiries",
+      subtextKey: "contact.callWhatsapp.subtitle",
       color: "text-green-600"
     },
     {
       icon: Mail,
-      title: "Email Us",
-      info: "hello",
-      subtext: "We respond within 2 hours",
+      titleKey: "contact.emailUs",
+      info: "hello@rwandaadventures.com",
+      subtextKey: "contact.emailUs.subtitle",
       color: "text-blue-600"
     },
     {
       icon: MapPin,
-      title: "Meet Us",
-      info: "Kigali Convention Centre Area",
-      subtext: "Kigali, Rwanda",
+      titleKey: "contact.meetUs",
+      infoKey: "contact.meetUs.location",
+      subtextKey: "contact.meetUs.city",
       color: "text-primary"
     },
     {
       icon: Clock,
-      title: "Response Time",
-      info: "Under 2 Hours",
-      subtext: "Usually much faster!",
+      titleKey: "contact.responseTime",
+      infoKey: "contact.responseTime.value",
+      subtextKey: "contact.responseTime.subtitle",
       color: "text-orange-600"
     }
   ];
@@ -79,17 +81,16 @@ export function NewContact() {
           viewport={{ once: true }}
         >
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-            Let's Plan Your Adventure
+            {t('contact.planAdventure')}
           </Badge>
           <h2 className="text-4xl md:text-5xl text-gray-800 mb-6">
-            Ready to Transform Your 
+            {t('contact.ready')}{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600">
-              {" "}Conference Trip?
+              {t('contact.conferenceTrip')}
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Tell us about your schedule and interests. We'll craft the perfect Events and Conference Tours 
-            that fits your timeline and exceeds your expectations.
+            {t('contact.tellUs')}
           </p>
         </motion.div>
 
@@ -104,14 +105,14 @@ export function NewContact() {
           >
             <Card className="shadow-2xl border-0 bg-white/80 backdrop-blur-sm">
               <CardHeader className="text-center pb-8">
-                <h3 className="text-2xl text-gray-800">Quick Adventure Planner</h3>
-                <p className="text-gray-600">Fill this out and we'll send you a custom itinerary within 2 hours!</p>
+                <h3 className="text-2xl text-gray-800">{t('contact.quickPlanner')}</h3>
+                <p className="text-gray-600">{t('contact.quickPlanner.subtitle')}</p>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm text-gray-700 mb-2">Your Name *</label>
+                      <label className="block text-sm text-gray-700 mb-2">{t('contact.name')}</label>
                       <Input
                         required
                         value={formData.name}
@@ -121,13 +122,13 @@ export function NewContact() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-gray-700 mb-2">Email Address *</label>
+                      <label className="block text-sm text-gray-700 mb-2">{t('contact.email')}</label>
                       <Input
                         type="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="john"
+                        placeholder="john@company.com"
                         className="h-12"
                       />
                     </div>
@@ -135,7 +136,7 @@ export function NewContact() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm text-gray-700 mb-2">Phone/WhatsApp</label>
+                      <label className="block text-sm text-gray-700 mb-2">{t('contact.phone.label')}</label>
                       <Input
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -144,34 +145,34 @@ export function NewContact() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-gray-700 mb-2">Available Days *</label>
+                      <label className="block text-sm text-gray-700 mb-2">{t('contact.availableDays')} *</label>
                       <Input
                         required
                         value={formData.days}
                         onChange={(e) => setFormData({ ...formData, days: e.target.value })}
-                        placeholder="e.g., 2-3 days after conference"
+                        placeholder={t('contact.availableDays.placeholder')}
                         className="h-12"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm text-gray-700 mb-2">What interests you most? *</label>
+                    <label className="block text-sm text-gray-700 mb-2">{t('contact.interests')} *</label>
                     <Input
                       required
                       value={formData.interests}
                       onChange={(e) => setFormData({ ...formData, interests: e.target.value })}
-                      placeholder="Safari, gorillas, culture, adventure sports..."
+                      placeholder={t('contact.interests.placeholder')}
                       className="h-12"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm text-gray-700 mb-2">Additional Details</label>
+                    <label className="block text-sm text-gray-700 mb-2">{t('contact.additionalDetails')}</label>
                     <Textarea
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Conference dates, group size, special requirements, budget range..."
+                      placeholder={t('contact.additionalDetails.placeholder')}
                       rows={4}
                     />
                   </div>
@@ -179,13 +180,13 @@ export function NewContact() {
                   <div className="bg-gradient-to-r from-primary/5 to-green-600/5 p-6 rounded-lg border border-primary/10">
                     <div className="flex items-center gap-2 mb-3">
                       <Send className="w-5 h-5 text-primary" />
-                      <span className="text-primary">What happens next?</span>
+                      <span className="text-primary">{t('contact.whatHappensNext')}</span>
                     </div>
                     <ul className="text-sm text-gray-600 space-y-2">
-                      <li>✅ We'll review your preferences and create a custom itinerary</li>
-                      <li>🚀 You'll receive detailed options within 2 hours</li>
-                      <li>💬 We'll schedule a quick call to finalize details</li>
-                      <li>🎉 Your Events and Conference Tours is ready to book!</li>
+                      <li>✅ {t('contact.step1')}</li>
+                      <li>🚀 {t('contact.step2')}</li>
+                      <li>💬 {t('contact.step3')}</li>
+                      <li>🎉 {t('contact.step4')}</li>
                     </ul>
                   </div>
 
@@ -194,7 +195,7 @@ export function NewContact() {
                     className="w-full h-14 text-lg bg-gradient-to-r from-primary to-green-600 hover:from-primary/90 hover:to-green-600/90 shadow-lg"
                   >
                     <Send className="w-5 h-5 mr-2" />
-                    Send My Adventure Request
+                    {t('contact.sendRequest')}
                   </Button>
                 </form>
               </CardContent>
@@ -228,9 +229,9 @@ export function NewContact() {
                             <IconComponent className="w-6 h-6" />
                           </div>
                           <div className="flex-1">
-                            <h4 className="text-gray-800 mb-1">{contact.title}</h4>
-                            <p className="text-gray-900 mb-1">{contact.info}</p>
-                            <p className="text-sm text-gray-500">{contact.subtext}</p>
+                            <h4 className="text-gray-800 mb-1">{t(contact.titleKey)}</h4>
+                            <p className="text-gray-900 mb-1">{contact.infoKey ? t(contact.infoKey) : contact.info}</p>
+                            <p className="text-sm text-gray-500">{t(contact.subtextKey)}</p>
                           </div>
                         </div>
                       </CardContent>
@@ -252,7 +253,7 @@ export function NewContact() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Events and Conference Tours Location"
+                    title="Rwanda Adventures Location"
                   ></iframe>
                   <div className="absolute top-4 left-4 bg-white px-3 py-2 rounded-lg shadow-md">
                     <p className="text-sm text-gray-800">📍 Find us near Kigali Convention Centre</p>

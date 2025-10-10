@@ -4,6 +4,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Clock, MapPin } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface TourCardProps {
   title: string;
@@ -30,6 +31,7 @@ export function TourCard({
   onLearnMore,
   onBookNow
 }: TourCardProps) {
+  const { t } = useLanguage();
   const imageGallery = images || (imageUrl ? [imageUrl] : []);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -115,13 +117,13 @@ export function TourCard({
               className="flex-1 border-primary text-primary hover:bg-primary hover:text-white"
               onClick={onLearnMore}
             >
-              Learn More
+              {t('tours.learnMore')}
             </Button>
             <Button 
               className="flex-1 bg-primary hover:bg-primary/90"
               onClick={onBookNow}
             >
-              Book Now
+              {t('tours.bookNow')}
             </Button>
           </div>
         </CardFooter>

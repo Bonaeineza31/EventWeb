@@ -5,6 +5,7 @@ import { Badge } from "./ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { ArrowLeft, Users, Clock, MapPin, ChevronDown, Tag } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface BookingPackagesPageProps {
   onBack: () => void;
@@ -13,6 +14,7 @@ interface BookingPackagesPageProps {
 }
 
 export function BookingPackagesPage({ onBack, onBookPackage, onLearnMore }: BookingPackagesPageProps) {
+  const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedPeople, setSelectedPeople] = useState<{[key: number]: number}>({});
   

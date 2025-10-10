@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface ImprovedHeroProps {
   onBookNowClick: () => void;
 }
 
 export function ImprovedHero({ onBookNowClick }: ImprovedHeroProps) {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const packages = [
@@ -81,19 +83,16 @@ export function ImprovedHero({ onBookNowClick }: ImprovedHeroProps) {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl lg:text-7xl mb-12 max-w-5xl mx-auto leading-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
-              Beyond The Conference Hall
+              {t('hero.tagline')}
             </span>
-             <div className="text-4xl md:text-6xl lg:text-6xl text-white mb-8 max-w-4xl mx-auto leading-relaxed">
-             Rwanda Wonders Await!
-          </div>
           </h1>
           
-         
+          <div className="text-2xl md:text-3xl lg:text-4xl text-white mb-8 max-w-4xl mx-auto leading-relaxed">
+            {t('hero.title')}
+          </div>
           
-          <p className="text-2xl md:text-3xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed">
-            From the iconic Mountain Gorillas in Volcanoes National Park to the game safaris in Akagera, 
-            the breathtaking adventure of Nyungwe, vibrant Kigali tours, serene Lake Kivu relaxation, and 
-            rich cultural experiences—there's always something for you.
+          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed">
+            {t('hero.subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
@@ -102,7 +101,7 @@ export function ImprovedHero({ onBookNowClick }: ImprovedHeroProps) {
               onClick={scrollToTours}
               className="bg-primary hover:bg-primary/90 text-white px-12 py-6 text-xl"
             >
-              Explore Packages
+              {t('hero.explorePackages')}
               <ArrowRight className="w-6 h-6 ml-3" />
             </Button>
             <Button 
@@ -111,7 +110,7 @@ export function ImprovedHero({ onBookNowClick }: ImprovedHeroProps) {
               onClick={onBookNowClick}
               className="border-2 border-white/80 text-white hover:bg-white/10 px-12 py-6 text-xl backdrop-blur-sm"
             >
-              Book Now
+              {t('header.bookNow')}
             </Button>
           </div>
         </div>

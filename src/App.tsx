@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { LanguageProvider } from "./contexts/LanguageContext";
 import { UpdatedScrollingHeader } from "./components/UpdatedScrollingHeader";
 import { ImprovedHero } from "./components/ImprovedHero";
 import { TourTips } from "./components/TourTips";
@@ -11,9 +12,11 @@ import { UpdatedBookingFormPage } from "./components/UpdatedBookingFormPage";
 import { QuickQuoteModal } from "./components/QuickQuoteModal";
 import { destinationsData } from "./components/destinationData";
 import { Toaster } from "./components/ui/sonner";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "./components/ui/button";
 import type { DestinationData, PackageData, ViewType, PreviousViewType } from "./types";
 
-export default function App() {
+function AppContent() {
   const [currentView, setCurrentView] = useState<ViewType>('home');
   const [selectedDestination, setSelectedDestination] = useState<DestinationData | null>(null);
   const [selectedPackage, setSelectedPackage] = useState<PackageData | null>(null);
@@ -104,6 +107,18 @@ export default function App() {
     setSelectedPackage(null);
   };
 
+  const handleContactExperts = () => {
+    setCurrentView('contact');
+  };
+
+  const handleBackFromContact = () => {
+    if (selectedDestination) {
+      setCurrentView('destination');
+    } else {
+      setCurrentView('home');
+    }
+  };
+
   if (currentView === 'destination' && selectedDestination) {
     return (
       <>
@@ -111,7 +126,41 @@ export default function App() {
           destination={selectedDestination} 
           onBack={handleBackToHome}
           onBookNow={handleBookFromDestination}
+          onContactExperts={handleContactExperts}
         />
+        <Toaster />
+      </>
+    );
+  }
+
+  if (currentView === 'contact') {
+    return (
+      <>
+        <div className="min-h-screen bg-white">
+          {/* Header */}
+          <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+            <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+              <button 
+                onClick={handleBackFromContact}
+                className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors"
+              >
+                <ArrowLeft className="w-5 h-5" />
+                <span>Back</span>
+              </button>
+              <div className="flex items-center gap-3">
+                <Button onClick={handleBookNowClick} className="bg-primary hover:bg-primary/90" size="sm">
+                  Book Now
+                </Button>
+              </div>
+            </div>
+          </div>
+          
+          {/* Contact Content */}
+          <div className="pt-8">
+            <NewContact />
+          </div>
+          <NewFooter />
+        </div>
         <Toaster />
       </>
     );
@@ -153,5 +202,13 @@ export default function App() {
       <QuickQuoteModal isOpen={isQuickQuoteOpen} onClose={() => setIsQuickQuoteOpen(false)} />
       <Toaster />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Menu, X, Phone, Mail } from "lucide-react";
+import { LanguageSwitch } from "./LanguageSwitch";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface UpdatedScrollingHeaderProps {
   onBookNowClick: () => void;
@@ -8,6 +10,7 @@ interface UpdatedScrollingHeaderProps {
 }
 
 export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: UpdatedScrollingHeaderProps) {
+  const { t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -64,10 +67,10 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
             <div>
               <h1 className={`text-xl font-bold ${
                 isScrolled ? 'text-gray-800' : 'text-white'
-              }`}>Events and Conference Tours</h1>
+              }`}>Rwanda Adventures</h1>
               <p className={`text-xs ${
                 isScrolled ? 'text-gray-500' : 'text-white/80'
-              }`}>Beyond Conference Halls</p>
+              }`}>{t('hero.tagline')}</p>
             </div>
           </div>
           
@@ -80,7 +83,7 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
                   : 'text-white hover:text-white/80'
               }`}
             >
-              Home
+              {t('header.home')}
             </button>
             <button 
               onClick={() => scrollToSection('tours')}
@@ -90,7 +93,7 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
                   : 'text-white hover:text-white/80'
               }`}
             >
-              Tour Packages
+              {t('header.tours')}
             </button>
             <button 
               onClick={() => scrollToSection('tour-tips')}
@@ -110,28 +113,26 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
                   : 'text-white hover:text-white/80'
               }`}
             >
-              Contact
+              {t('header.contact')}
             </button>
           </nav>
 
           <div className="hidden lg:flex items-center space-x-3">
+            <LanguageSwitch />
             <Button 
-              variant="outline"
+              variant={isScrolled ? "outline" : "secondary"}
               size="sm"
               onClick={onQuickQuoteClick || onBookNowClick}
-              className={isScrolled ? 
-                "border-gray-300 bg-white text-gray-700 hover:bg-gray-50" : 
-                "border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50"
-              }
+              className={isScrolled ? "" : "border-white/30 text-white hover:bg-white/10"}
             >
-              Quick Quote
+              {t('header.getQuote')}
             </Button>
             <Button 
               className="bg-primary hover:bg-primary/90" 
               size="sm"
               onClick={onBookNowClick}
             >
-              Book Now
+              {t('header.bookNow')}
             </Button>
           </div>
 
@@ -165,7 +166,7 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
                     : 'text-white hover:text-white/80'
                 }`}
               >
-                Home
+                {t('header.home')}
               </button>
               <button 
                 onClick={() => scrollToSection('tours')} 
@@ -175,7 +176,7 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
                     : 'text-white hover:text-white/80'
                 }`}
               >
-                Tour Packages
+                {t('header.tours')}
               </button>
               <button 
                 onClick={() => scrollToSection('tour-tips')} 
@@ -195,26 +196,24 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
                     : 'text-white hover:text-white/80'
                 }`}
               >
-                Contact
+                {t('header.contact')}
               </button>
               <div className="flex flex-col space-y-2 pt-4">
+                <LanguageSwitch />
                 <Button 
-                  variant="outline"
+                  variant={isScrolled ? "outline" : "secondary"} 
                   size="sm"
                   onClick={onQuickQuoteClick || onBookNowClick}
-                  className={isScrolled ? 
-                    "border-gray-300 bg-white text-gray-700 hover:bg-gray-50" : 
-                    "border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50"
-                  }
+                  className={isScrolled ? "" : "border-white/30 text-white hover:bg-white/10"}
                 >
-                  Quick Quote
+                  {t('header.getQuote')}
                 </Button>
                 <Button 
                   className="bg-primary" 
                   size="sm"
                   onClick={onBookNowClick}
                 >
-                  Book Now
+                  {t('header.bookNow')}
                 </Button>
               </div>
             </nav>

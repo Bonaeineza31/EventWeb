@@ -1,4 +1,5 @@
 import { TourCard } from "./TourCard";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface ToursProps {
   onBookNowClick: () => void;
@@ -7,18 +8,19 @@ interface ToursProps {
 }
 
 export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: ToursProps) {
+  const { t } = useLanguage();
   const tours = [
     {
       id: 1,
-      title: "Akagera Safari Adventure",
-      duration: "2 Days (1 night)",
-      location: "Akagera National Park",
-      description: "Experience the Big Five in Rwanda's premier wildlife sanctuary with guided game drives and boat safaris on Lake Ihema.",
+      title: t('tour.akagera.title'),
+      duration: t('tour.akagera.duration'),
+      location: t('tour.akagera.location'),
+      description: t('tour.akagera.description'),
       highlights: [
-        "Big Five safari experience",
-        "Sunset boat ride on Lake Ihema", 
-        "Wildlife photography opportunities",
-        "Professional guide included"
+        t('tour.akagera.highlight1'),
+        t('tour.akagera.highlight2'), 
+        t('tour.akagera.highlight3'),
+        t('tour.akagera.highlight4')
       ],
       images: [
         "https://images.unsplash.com/photo-1623005804842-44950138a4ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBa2FnZXJhJTIwTmF0aW9uYWwlMjBQYXJrJTIwUndhbmRhJTIwc2FmYXJpJTIwd2lsZGxpZmV8ZW58MXx8fHwxNzU4NjEzMjQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -30,15 +32,15 @@ export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: T
     },
     {
       id: 2,
-      title: "Volcanoes Gorilla Trekking",
-      duration: "3 Days (2 nights)", 
-      location: "Volcanoes National Park",
-      description: "Once-in-a-lifetime encounter with mountain gorillas in their natural habitat, plus golden monkey trekking and cultural experiences.",
+      title: t('tour.volcanoes.title'),
+      duration: t('tour.volcanoes.duration'), 
+      location: t('tour.volcanoes.location'),
+      description: t('tour.volcanoes.description'),
       highlights: [
-        "Mountain gorilla tracking",
-        "Golden monkey trek",
-        "Cultural village visits",
-        "Conservation center tour"
+        t('tour.volcanoes.highlight1'),
+        t('tour.volcanoes.highlight2'),
+        t('tour.volcanoes.highlight3'),
+        t('tour.volcanoes.highlight4')
       ],
       images: [
         "https://images.unsplash.com/photo-1722293094576-424bd9b4aef9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSd2FuZGElMjBtb3VudGFpbiUyMGdvcmlsbGElMjB0cmVra2luZ3xlbnwxfHx8fDE3NTg2MTMyNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -50,15 +52,15 @@ export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: T
     },
     {
       id: 3,
-      title: "Lake Kivu Escape",
-      duration: "4 Days (3 nights)",
-      location: "Lake Kivu, Gisenyi",
-      description: "Relax by Africa's most beautiful lake with boat cruises, coffee plantation tours, and scenic hiking trails.",
+      title: t('tour.kivu.title'),
+      duration: t('tour.kivu.duration'),
+      location: t('tour.kivu.location'),
+      description: t('tour.kivu.description'),
       highlights: [
-        "Lakeside accommodation",
-        "Island hopping boat cruises", 
-        "Coffee plantation tours",
-        "Scenic hiking with panoramic views"
+        t('tour.kivu.highlight1'),
+        t('tour.kivu.highlight2'), 
+        t('tour.kivu.highlight3'),
+        t('tour.kivu.highlight4')
       ],
       images: [
         "https://images.unsplash.com/photo-1647849975193-bf78bd1cbf4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxMYWtlJTIwS2l2dSUyMFJ3YW5kYSUyMGJvYXRzfGVufDF8fHx8MTc1ODYxMzI0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -70,15 +72,15 @@ export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: T
     },
     {
       id: 4,
-      title: "Nyungwe Canopy Experience",
-      duration: "3 Days (2 nights)",
-      location: "Nyungwe National Park", 
-      description: "Adventure through ancient rainforest with canopy walks, chimpanzee tracking, and waterfall hikes.",
+      title: t('tour.nyungwe.title'),
+      duration: t('tour.nyungwe.duration'),
+      location: t('tour.nyungwe.location'), 
+      description: t('tour.nyungwe.description'),
       highlights: [
-        "Canopy walkway adventure",
-        "Chimpanzee tracking",
-        "Waterfall hiking trails",
-        "Tea plantation visits"
+        t('tour.nyungwe.highlight1'),
+        t('tour.nyungwe.highlight2'),
+        t('tour.nyungwe.highlight3'),
+        t('tour.nyungwe.highlight4')
       ],
       images: [
         "https://images.unsplash.com/photo-1753672036773-2f2861882113?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOeXVuZ3dlJTIwZm9yZXN0JTIwY2Fub3B5JTIwd2Fsa3dheSUyMFJ3YW5kYXxlbnwxfHx8fDE3NTg2MTMyNTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -90,15 +92,15 @@ export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: T
     },
     {
       id: 5,
-      title: "Cultural Rwanda Experience",
-      duration: "1 Day",
-      location: "Kigali & Surroundings",
-      description: "Immerse yourself in Rwandan culture with traditional dances, art centers, culinary experiences, and craft villages.",
+      title: t('tour.cultural.title'),
+      duration: t('tour.cultural.duration'),
+      location: t('tour.cultural.location'),
+      description: t('tour.cultural.description'),
       highlights: [
-        "Traditional dance performances",
-        "Inema Art Center visit",
-        "Rwandan culinary tasting",
-        "Local craft shopping"
+        t('tour.cultural.highlight1'),
+        t('tour.cultural.highlight2'),
+        t('tour.cultural.highlight3'),
+        t('tour.cultural.highlight4')
       ],
       images: [
         "https://images.unsplash.com/photo-1515921560173-3633830cb11a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSd2FuZGElMjBjdWx0dXJhbCUyMGRhbmNlJTIwdHJhZGl0aW9uYWx8ZW58MXx8fHwxNzU4NjEzMjUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -109,15 +111,15 @@ export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: T
     },
     {
       id: 6,
-      title: "Kigali City Experience", 
-      duration: "Half Day",
-      location: "Kigali City",
-      description: "Discover Rwanda's modern capital with memorial visits, local markets, coffee culture, and panoramic city views.",
+      title: t('tour.kigali.title'), 
+      duration: t('tour.kigali.duration'),
+      location: t('tour.kigali.location'),
+      description: t('tour.kigali.description'),
       highlights: [
-        "Genocide Memorial visit",
-        "Kimironko Market tour",
-        "Coffee tasting experience", 
-        "City skyline views from Rebero Hills"
+        t('tour.kigali.highlight1'),
+        t('tour.kigali.highlight2'),
+        t('tour.kigali.highlight3'), 
+        t('tour.kigali.highlight4')
       ],
       images: [
         "https://images.unsplash.com/photo-1708772565588-33785e13aa46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSd2FuZGElMjBLaWdhbGklMjBjaXR5c2NhcGUlMjBza3lsaW5lfGVufDF8fHx8MTc1ODYxMzIzOXww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -134,11 +136,10 @@ export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: T
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl text-gray-800 mb-6">
-            Choose Your Rwanda Adventure
+            {t('tours.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Tailored packages for conference attendees with flexible durations. 
-            From wildlife safaris to cultural immersion, discover Rwanda's treasures.
+            {t('tours.subtitle')}
           </p>
         </div>
 
@@ -166,7 +167,7 @@ export function Tours({ onBookNowClick, onDirectBookClick, onLearnMoreClick }: T
 
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-6">
-            All packages can be customized for groups, individuals, or corporate teams
+            {t('tours.customNote')}
           </p>
         </div>
       </div>

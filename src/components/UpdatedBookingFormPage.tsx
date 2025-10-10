@@ -17,7 +17,7 @@ import {
   AlertCircle,
   Lock
 } from "lucide-react";
-import { toast } from "sonner";
+import { toast } from "sonner@2.0.3";
 
 interface UpdatedBookingFormPageProps {
   onBack: () => void;
@@ -76,6 +76,20 @@ export function UpdatedBookingFormPage({ onBack, packageData }: UpdatedBookingFo
     }));
   };
 
+  // Handle expiry date formatting (MM/YY)
+  const handleExpiryDateChange = (value: string) => {
+    // Remove all non-numeric characters
+    const cleaned = value.replace(/\D/g, '');
+    
+    // Add slash after MM
+    let formatted = cleaned;
+    if (cleaned.length >= 2) {
+      formatted = cleaned.slice(0, 2) + '/' + cleaned.slice(2, 4);
+    }
+    
+    handleInputChange('expiryDate', formatted);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -84,7 +98,7 @@ export function UpdatedBookingFormPage({ onBack, packageData }: UpdatedBookingFo
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     toast.success("Booking confirmed and payment processed!", {
-      description: "Welcome to your Events and Conference Tours!"
+      description: "Welcome to your Rwanda adventure!"
     });
 
     setIsSubmitting(false);
@@ -107,7 +121,7 @@ export function UpdatedBookingFormPage({ onBack, packageData }: UpdatedBookingFo
             </button>
             <div className="text-right">
               <h1 className="text-2xl text-gray-800">Complete Your Booking</h1>
-              <p className="text-sm text-gray-600">Secure your Events and Conference Tours</p>
+              <p className="text-sm text-gray-600">Secure your Rwanda adventure</p>
             </div>
           </div>
         </div>
@@ -254,7 +268,7 @@ export function UpdatedBookingFormPage({ onBack, packageData }: UpdatedBookingFo
                           type="text"
                           required
                           value={formData.expiryDate}
-                          onChange={(e) => handleInputChange("expiryDate", e.target.value)}
+                          onChange={(e) => handleExpiryDateChange(e.target.value)}
                           placeholder="MM/YY"
                           className="mt-1"
                           maxLength={5}
@@ -264,7 +278,7 @@ export function UpdatedBookingFormPage({ onBack, packageData }: UpdatedBookingFo
                         <Label htmlFor="cvv">CVV *</Label>
                         <Input
                           id="cvv"
-                          type="text"
+                          type="password"
                           required
                           value={formData.cvv}
                           onChange={(e) => handleInputChange("cvv", e.target.value)}

@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Card, CardContent } from "./ui/card";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { useLanguage } from "../contexts/LanguageContext";
 
 import { 
   Star, 
@@ -25,6 +26,7 @@ interface DestinationPageProps {
 }
 
 export function DestinationPage({ destination, onBack, onBookNow, onContactExperts }: DestinationPageProps) {
+  const { t } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
 
@@ -55,14 +57,14 @@ export function DestinationPage({ destination, onBack, onBookNow, onContactExper
               className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors"
             >
               <ArrowLeft className="w-5 h-5" />
-              <span>Back to Adventures</span>
+              <span>{t('destination.back')}</span>
             </button>
             <div className="flex items-center gap-3">
               <Button variant="outline" size="sm">
-                Share
+                {t('destination.share')}
               </Button>
               <Button onClick={handleBooking} className="bg-primary hover:bg-primary/90" size="sm">
-                Book Now
+                {t('destination.bookNow')}
               </Button>
             </div>
           </div>
@@ -137,13 +139,13 @@ export function DestinationPage({ destination, onBack, onBookNow, onContactExper
             <div className="lg:col-span-2 space-y-12">
               {/* Description */}
               <div>
-                <h2 className="text-3xl text-gray-800 mb-6">About This Experience</h2>
+                <h2 className="text-3xl text-gray-800 mb-6">{t('destination.aboutExperience')}</h2>
                 <p className="text-gray-600 text-lg leading-relaxed">{destination.description}</p>
               </div>
 
               {/* Highlights */}
               <div>
-                <h2 className="text-3xl text-gray-800 mb-6">Experience Highlights</h2>
+                <h2 className="text-3xl text-gray-800 mb-6">{t('destination.experienceHighlights')}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {destination.highlights?.map((highlight:any, index:any) => (
                     <div key={index} className="flex items-start space-x-3 p-4 bg-gray-50 rounded-xl">
@@ -156,7 +158,7 @@ export function DestinationPage({ destination, onBack, onBookNow, onContactExper
 
               {/* Itinerary */}
               <div>
-                <h2 className="text-3xl text-gray-800 mb-6">Detailed Itinerary</h2>
+                <h2 className="text-3xl text-gray-800 mb-6">{t('destination.detailedItinerary')}</h2>
                 <div className="space-y-6">
                   {destination.itinerary?.map((day:any, index:any) => (
                     <Card key={index} className="border-l-4 border-l-primary shadow-md">
@@ -183,9 +185,9 @@ export function DestinationPage({ destination, onBack, onBookNow, onContactExper
                     <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center">
                       <Backpack className="w-4 h-4 text-primary" />
                     </div>
-                    What to Pack
+                    {t('destination.whatToPack')}
                   </h3>
-                  <p className="text-gray-600 mb-6">Essential items to bring for this experience based on the climate and activities:</p>
+                  <p className="text-gray-600 mb-6">{t('destination.packingDescription')}</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {destination.packingList.map((item:any, index:any) => (
                       <div key={index} className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
@@ -206,42 +208,42 @@ export function DestinationPage({ destination, onBack, onBookNow, onContactExper
                   <CardContent className="p-8">
                     <div className="text-center mb-8">
                       <div className="text-4xl text-white mb-2">{destination.price}</div>
-                      <div className="text-white/80">per person</div>
+                      <div className="text-white/80">{t('destination.perPerson')}</div>
                     </div>
 
                     <Button 
                       onClick={handleBooking}
                       className="w-full bg-white text-primary hover:bg-gray-100 mb-6 py-4 text-lg"
                     >
-                      Book This Adventure
+                      {t('destination.bookAdventure')}
                     </Button>
 
                     <div className="space-y-3 mb-6">
                       <div className="flex items-center gap-3 text-white/90">
                         <Clock className="w-5 h-5 text-white" />
                         <div>
-                          <div className="text-xs text-white/70">Duration</div>
+                          <div className="text-xs text-white/70">{t('destination.duration')}</div>
                           <div className="text-lg">{destination.duration}</div>
                         </div>
                       </div>
                       <div className="flex items-center gap-3 text-sm text-white/90">
                         <CheckCircle className="w-4 h-4 text-white" />
-                        <span>Free cancellation up to 24 hours</span>
+                        <span>{t('destination.freeCancellation')}</span>
                       </div>
                       <div className="flex items-center gap-3 text-sm text-white/90">
                         <CheckCircle className="w-4 h-4 text-white" />
-                        <span>Expert local guides included</span>
+                        <span>{t('destination.expertGuides')}</span>
                       </div>
                       <div className="flex items-center gap-3 text-sm text-white/90">
                         <CheckCircle className="w-4 h-4 text-white" />
-                        <span>Small group experience</span>
+                        <span>{t('destination.smallGroup')}</span>
                       </div>
                     </div>
 
                     <div className="flex items-center justify-center space-x-6 text-sm text-white/70 pt-4 border-t border-white/20">
                       <button className="flex items-center gap-2 hover:text-white transition-colors">
                         <Heart className="w-4 h-4" />
-                        <span>Save for Later</span>
+                        <span>{t('destination.saveForLater')}</span>
                       </button>
                     </div>
                   </CardContent>
@@ -250,14 +252,14 @@ export function DestinationPage({ destination, onBack, onBookNow, onContactExper
                 {/* Contact Card */}
                 <Card className="shadow-lg border-0">
                   <CardContent className="p-6 text-center">
-                    <h4 className="text-lg text-gray-800 mb-3">Need Help Planning?</h4>
-                    <p className="text-gray-600 text-sm mb-4">Our travel experts are here to help customize your perfect Rwanda adventure.</p>
+                    <h4 className="text-lg text-gray-800 mb-3">{t('destination.needHelp')}</h4>
+                    <p className="text-gray-600 text-sm mb-4">{t('destination.helpDescription')}</p>
                     <Button 
                       variant="outline" 
                       className="w-full border-primary text-primary hover:bg-primary hover:text-white"
                       onClick={onContactExperts}
                     >
-                      Contact Our Experts
+                      {t('destination.contactExperts')}
                     </Button>
                   </CardContent>
                 </Card>

@@ -1,17 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Menu, X, Phone, Mail } from "lucide-react";
-import { LanguageSwitch } from "./LanguageSwitch";
-import { useLanguage } from "../contexts/LanguageContext";
-import { cn } from "./ui/utils";
 
-interface UpdatedScrollingHeaderProps {
+interface ScrollingHeaderProps {
   onBookNowClick: () => void;
-  onQuickQuoteClick?: () => void;
 }
 
-export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: UpdatedScrollingHeaderProps) {
-  const { t } = useLanguage();
+export function ScrollingHeader({ onBookNowClick }: ScrollingHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -32,6 +27,10 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
     }
     setIsMenuOpen(false);
   };
+
+  function onQuickQuoteClick(event: MouseEvent<HTMLButtonElement, MouseEvent>): void {
+    throw new Error("Function not implemented.");
+  }
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -71,72 +70,78 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
               }`}>Rwanda Adventures</h1>
               <p className={`text-xs ${
                 isScrolled ? 'text-gray-500' : 'text-white/80'
-              }`}>{t('hero.tagline')}</p>
+              }`}>Beyond Conference Halls</p>
             </div>
           </div>
           
           <nav className="hidden lg:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('home')}
-              className={`text-lg font-medium transition-colors ${
+              className={`transition-colors ${
                 isScrolled 
                   ? 'text-gray-700 hover:text-primary' 
                   : 'text-white hover:text-white/80'
               }`}
             >
-              {t('header.home')}
+              Home
+            </button>
+            <button 
+              onClick={() => scrollToSection('about')}
+              className={`transition-colors ${
+                isScrolled 
+                  ? 'text-gray-700 hover:text-primary' 
+                  : 'text-white hover:text-white/80'
+              }`}
+            >
+              About
             </button>
             <button 
               onClick={() => scrollToSection('tours')}
-              className={`text-lg font-medium transition-colors ${
+              className={`transition-colors ${
                 isScrolled 
                   ? 'text-gray-700 hover:text-primary' 
                   : 'text-white hover:text-white/80'
               }`}
             >
-              {t('header.tours')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('tour-tips')}
-              className={`text-lg font-medium transition-colors ${
-                isScrolled 
-                  ? 'text-gray-700 hover:text-primary' 
-                  : 'text-white hover:text-white/80'
-              }`}
-            >
-              {t('header.travelTips')}
+              Packages
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className={`text-lg font-medium transition-colors ${
+              className={`transition-colors ${
                 isScrolled 
                   ? 'text-gray-700 hover:text-primary' 
                   : 'text-white hover:text-white/80'
               }`}
             >
-              {t('header.contact')}
+              Contact
             </button>
           </nav>
 
           <div className="hidden lg:flex items-center space-x-3">
-            <LanguageSwitch />
             <Button 
-              variant="outline" 
+              variant="outline"
+              size="sm"
+              onClick={onBookNowClick}
+              className={isScrolled ? "" : "border-white/30 text-white hover:bg-white/10"}
+            > <Button 
+              variant="outline"
               size="sm"
               onClick={onQuickQuoteClick || onBookNowClick}
-             className={isScrolled ? 
+              className={isScrolled ? 
                 "border-gray-300 bg-white text-gray-700 hover:bg-gray-50" : 
                 "border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50"
               }
             >
-              {t('header.getQuote')}
+              Quick Quote
+            </Button>
+              Quick Quote
             </Button>
             <Button 
               className="bg-primary hover:bg-primary/90" 
               size="sm"
               onClick={onBookNowClick}
             >
-              {t('header.bookNow')}
+              Book Now
             </Button>
           </div>
 
@@ -164,64 +169,59 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
             <nav className="flex flex-col space-y-4">
               <button 
                 onClick={() => scrollToSection('home')} 
-                className={`text-left text-lg font-medium transition-colors ${
+                className={`text-left transition-colors ${
                   isScrolled 
                     ? 'text-gray-700 hover:text-primary' 
                     : 'text-white hover:text-white/80'
                 }`}
               >
-                {t('header.home')}
+                Home
+              </button>
+              <button 
+                onClick={() => scrollToSection('about')} 
+                className={`text-left transition-colors ${
+                  isScrolled 
+                    ? 'text-gray-700 hover:text-primary' 
+                    : 'text-white hover:text-white/80'
+                }`}
+              >
+                About
               </button>
               <button 
                 onClick={() => scrollToSection('tours')} 
-                className={`text-left text-lg font-medium transition-colors ${
+                className={`text-left transition-colors ${
                   isScrolled 
                     ? 'text-gray-700 hover:text-primary' 
                     : 'text-white hover:text-white/80'
                 }`}
               >
-                {t('header.tours')}
-              </button>
-              <button 
-                onClick={() => scrollToSection('tour-tips')} 
-                className={`text-left text-lg font-medium transition-colors ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:text-primary' 
-                    : 'text-white hover:text-white/80'
-                }`}
-              >
-                {t('header.travelTips')}
+                Packages
               </button>
               <button 
                 onClick={() => scrollToSection('contact')} 
-                className={`text-left text-lg font-medium transition-colors ${
+                className={`text-left transition-colors ${
                   isScrolled 
                     ? 'text-gray-700 hover:text-primary' 
                     : 'text-white hover:text-white/80'
                 }`}
               >
-                {t('header.contact')}
+                Contact
               </button>
               <div className="flex flex-col space-y-2 pt-4">
-                <LanguageSwitch />
                 <Button 
-              variant="outline"
-              size="sm"
-              onClick={onQuickQuoteClick || onBookNowClick}
-              className={isScrolled ? 
-                "border-gray-300 bg-white text-gray-700 hover:bg-gray-50" : 
-                "border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50"
-              }
-            >
-              Quick Quote
-            </Button>
-
+                  variant={isScrolled ? "outline" : "secondary"} 
+                  size="sm"
+                  onClick={onBookNowClick}
+                  className={isScrolled ? "" : "border-white/30 text-white hover:bg-white/10"}
+                >
+                  Quick Quote
+                </Button>
                 <Button 
                   className="bg-primary" 
                   size="sm"
                   onClick={onBookNowClick}
                 >
-                  {t('header.bookNow')}
+                  Book Now
                 </Button>
               </div>
             </nav>

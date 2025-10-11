@@ -10,13 +10,14 @@ import { DestinationPage } from "./components/DestinationPage";
 import { BookingPackagesPage } from "./components/BookingPackagesPage";
 import { UpdatedBookingFormPage } from "./components/UpdatedBookingFormPage";
 import { QuickQuoteModal } from "./components/QuickQuoteModal";
-import { destinationsData } from "./components/destinationData";
+import { useDestinationData } from "./hooks/useDestinationData";
 import { Toaster } from "./components/ui/sonner";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "./components/ui/button";
 import type { DestinationData, PackageData, ViewType, PreviousViewType } from "./types";
 
 function AppContent() {
+  const destinationsData = useDestinationData();
   const [currentView, setCurrentView] = useState<ViewType>('home');
   const [selectedDestination, setSelectedDestination] = useState<DestinationData | null>(null);
   const [selectedPackage, setSelectedPackage] = useState<PackageData | null>(null);

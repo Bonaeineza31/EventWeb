@@ -139,7 +139,6 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
               {t('header.bookNow')}
             </Button>
           </div>
-
           <button 
             className={`lg:hidden p-2 rounded-lg transition-colors ${
               isScrolled 

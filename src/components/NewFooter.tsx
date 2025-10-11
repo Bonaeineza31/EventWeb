@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Facebook, Instagram, Linkedin, Twitter, Phone, Mail, MapPin, Heart } from "lucide-react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { useLanguage } from "../contexts/LanguageContext";
 
 export function NewFooter() {

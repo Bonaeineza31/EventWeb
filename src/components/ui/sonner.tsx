@@ -1,7 +1,9 @@
 "use client";
 
-import { useTheme } from "next-themes@0.4.6";
-import { Toaster as Sonner, ToasterProps } from "sonner@2.0.3";
+ // @ts-ignore: next-themes has no type declarations in this project
+import { useTheme } from "next-themes";
+// @ts-ignore: sonner has no type declarations in this project
+import { Toaster as Sonner, ToasterProps } from "sonner";
 
 const Toaster = ({ ...props }: ToasterProps) => {
   const { theme = "system" } = useTheme();

@@ -185,7 +185,7 @@ export function UpdatedBookingFormPage({ onBack, packageData }: UpdatedBookingFo
                       <Label htmlFor="numberOfPeople">Number of People *</Label>
                       <Select 
                         value={formData.numberOfPeople.toString()} 
-                        onValueChange={(value) => handleInputChange("numberOfPeople", parseInt(value))}
+                        onValueChange={(value:any) => handleInputChange("numberOfPeople", parseInt(value))}
                       >
                         <SelectTrigger className="mt-1">
                           <SelectValue placeholder="Select group size" />

@@ -168,7 +168,7 @@ export function QuickQuoteModal({ isOpen, onClose }: QuickQuoteModalProps) {
               </div>
               <div>
                 <Label htmlFor="groupSize">Group Size *</Label>
-                <Select value={formData.groupSize} onValueChange={(value:any) => handleInputChange("groupSize", value)}>
+                <Select value={formData.groupSize} onValueChange={(value) => handleInputChange("groupSize", value)}>
                   <SelectTrigger className="mt-1">
                     <SelectValue placeholder="Select group size" />
                   </SelectTrigger>
@@ -188,7 +188,7 @@ export function QuickQuoteModal({ isOpen, onClose }: QuickQuoteModalProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="duration">Trip Duration *</Label>
-                <Select value={formData.duration} onValueChange={(value:any) => handleInputChange("duration", value)}>
+                <Select value={formData.duration} onValueChange={(value) => handleInputChange("duration", value)}>
                   <SelectTrigger className="mt-1">
                     <SelectValue placeholder="How long?" />
                   </SelectTrigger>
@@ -218,7 +218,7 @@ export function QuickQuoteModal({ isOpen, onClose }: QuickQuoteModalProps) {
 
             <div>
               <Label htmlFor="interests">What interests you most? *</Label>
-              <Select value={formData.interests} onValueChange={(value:any) => handleInputChange("interests", value)}>
+              <Select value={formData.interests} onValueChange={(value) => handleInputChange("interests", value)}>
                 <SelectTrigger className="mt-1">
                   <SelectValue placeholder="Select your main interest" />
                 </SelectTrigger>
@@ -232,7 +232,7 @@ export function QuickQuoteModal({ isOpen, onClose }: QuickQuoteModalProps) {
 
             <div>
               <Label htmlFor="budget">Budget Range</Label>
-              <Select value={formData.budget} onValueChange={(value:any) => handleInputChange("budget", value)}>
+              <Select value={formData.budget} onValueChange={(value) => handleInputChange("budget", value)}>
                 <SelectTrigger className="mt-1">
                   <SelectValue placeholder="Select budget range (optional)" />
                 </SelectTrigger>

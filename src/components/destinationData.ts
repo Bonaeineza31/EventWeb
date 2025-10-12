@@ -2,6 +2,7 @@ import type { DestinationData } from "../types";
 
 export const destinationsData: DestinationData[] = [
   {
+    id: 0,
     name: "Mountain Gorillas",
     location: "Volcanoes National Park",
     image: "https://images.unsplash.com/photo-1722293118543-c4aa084f3c91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSd2FuZGElMjBtb3VudGFpbiUyMGdvcmlsbGFzfGVufDF8fHx8MTc1ODYxNDgxM3ww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -81,6 +82,7 @@ export const destinationsData: DestinationData[] = [
     }
   },
   {
+    id: 1,
     name: "Game Safari",
     location: "Akagera National Park",
     image: "https://images.unsplash.com/photo-1651860282296-47055c68580e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBa2FnZXJhJTIwTmF0aW9uYWwlMjBQYXJrJTIwUndhbmRhfGVufDF8fHx8MTc1ODYxNDgxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -165,6 +167,7 @@ export const destinationsData: DestinationData[] = [
     }
   },
   {
+    id: 2,
     name: "Canopy Walk",
     location: "Nyungwe Forest",
     image: "https://images.unsplash.com/photo-1489640818597-89b1edc97db5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOeXVuZ3dlJTIwRm9yZXN0JTIwUndhbmRhfGVufDF8fHx8MTc1ODYxNDgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -249,6 +252,7 @@ export const destinationsData: DestinationData[] = [
     }
   },
   {
+    id: 3,
     name: "Lake Relaxation",
     location: "Lake Kivu",
     image: "https://images.unsplash.com/photo-1706977570024-fefa419c48c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxMYWtlJTIwS2l2dSUyMFJ3YW5kYXxlbnwxfHx8fDE3NTg2MTQ4MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -333,6 +337,7 @@ export const destinationsData: DestinationData[] = [
     }
   },
   {
+    id: 4,
     name: "City Tours",
     location: "Kigali",
     image: "https://images.unsplash.com/photo-1706978116093-7b8cd429d6bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxLaWdhbGklMjBjaXR5JTIwUndhbmRhfGVufDF8fHx8MTc1ODYxNDgyN3ww&ixlib=rb-4.1.0&q=80&w=1080",

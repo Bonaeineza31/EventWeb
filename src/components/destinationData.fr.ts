@@ -2,6 +2,7 @@ import type { DestinationData } from "../types";
 
 export const destinationsDataFr: DestinationData[] = [
   {
+    id: 0,
     name: "Gorilles de Montagne",
     location: "Parc National des Volcans",
     image: "https://images.unsplash.com/photo-1722293118543-c4aa084f3c91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxSd2FuZGElMjBtb3VudGFpbiUyMGdvcmlsbGFzfGVufDF8fHx8MTc1ODYxNDgxM3ww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -81,6 +82,7 @@ export const destinationsDataFr: DestinationData[] = [
     }
   },
   {
+    id: 1,
     name: "Safari Animalier",
     location: "Parc National d'Akagera",
     image: "https://images.unsplash.com/photo-1651860282296-47055c68580e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBa2FnZXJhJTIwTmF0aW9uYWwlMjBQYXJrJTIwUndhbmRhfGVufDF8fHx8MTc1ODYxNDgxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -165,6 +167,7 @@ export const destinationsDataFr: DestinationData[] = [
     }
   },
   {
+    id: 2,
     name: "Marche en Canopée",
     location: "Forêt de Nyungwe",
     image: "https://images.unsplash.com/photo-1489640818597-89b1edc97db5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOeXVuZ3dlJTIwRm9yZXN0JTIwUndhbmRhfGVufDF8fHx8MTc1ODYxNDgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -249,6 +252,7 @@ export const destinationsDataFr: DestinationData[] = [
     }
   },
   {
+    id: 3,
     name: "Retraite au Lac Kivu",
     location: "Lac Kivu",
     image: "https://images.unsplash.com/photo-1560352283-e94bd63bd167?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxMYWtlJTIwS2l2dSUyMFJ3YW5kYXxlbnwxfHx8fDE3NTg2MTQ4MjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -331,6 +335,7 @@ export const destinationsDataFr: DestinationData[] = [
     }
   },
   {
+    id: 4,
     name: "Visites de la Ville",
     location: "Kigali",
     image: "https://images.unsplash.com/photo-1706978116093-7b8cd429d6bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxLaWdhbGklMjBjaXR5JTIwUndhbmRhfGVufDF8fHx8MTc1ODYxNDgyN3ww&ixlib=rb-4.1.0&q=80&w=1080",

@@ -28,10 +28,6 @@ export function ScrollingHeader({ onBookNowClick }: ScrollingHeaderProps) {
     setIsMenuOpen(false);
   };
 
-  function onQuickQuoteClick(event: MouseEvent<HTMLButtonElement, MouseEvent>): void {
-    throw new Error("Function not implemented.");
-  }
-
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
@@ -119,21 +115,11 @@ export function ScrollingHeader({ onBookNowClick }: ScrollingHeaderProps) {
 
           <div className="hidden lg:flex items-center space-x-3">
             <Button 
-              variant="outline"
+              variant={isScrolled ? "outline" : "secondary"}
               size="sm"
               onClick={onBookNowClick}
               className={isScrolled ? "" : "border-white/30 text-white hover:bg-white/10"}
-            > <Button 
-              variant="outline"
-              size="sm"
-              onClick={onQuickQuoteClick || onBookNowClick}
-              className={isScrolled ? 
-                "border-gray-300 bg-white text-gray-700 hover:bg-gray-50" : 
-                "border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50"
-              }
             >
-              Quick Quote
-            </Button>
               Quick Quote
             </Button>
             <Button 

@@ -1,8 +1,6 @@
 "use client";
 
- // @ts-ignore: next-themes has no type declarations in this project
 import { useTheme } from "next-themes";
-// @ts-ignore: sonner has no type declarations in this project
 import { Toaster as Sonner, ToasterProps } from "sonner";
 
 const Toaster = ({ ...props }: ToasterProps) => {

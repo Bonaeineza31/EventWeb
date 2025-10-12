@@ -3,7 +3,6 @@ import { Button } from "./ui/button";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { useLanguage } from "../contexts/LanguageContext";
-import { cn } from "./ui/utils";
 
 interface UpdatedScrollingHeaderProps {
   onBookNowClick: () => void;
@@ -121,13 +120,10 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
           <div className="hidden lg:flex items-center space-x-3">
             <LanguageSwitch />
             <Button 
-              variant="outline" 
+              variant={isScrolled ? "outline" : "secondary"}
               size="sm"
               onClick={onQuickQuoteClick || onBookNowClick}
-             className={isScrolled ? 
-                "border-gray-300 bg-white text-gray-700 hover:bg-gray-50" : 
-                "border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50"
-              }
+              className={isScrolled ? "" : "border-white/30 text-white hover:bg-white/10"}
             >
               {t('header.getQuote')}
             </Button>
@@ -139,6 +135,7 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
               {t('header.bookNow')}
             </Button>
           </div>
+
           <button 
             className={`lg:hidden p-2 rounded-lg transition-colors ${
               isScrolled 
@@ -204,17 +201,13 @@ export function UpdatedScrollingHeader({ onBookNowClick, onQuickQuoteClick }: Up
               <div className="flex flex-col space-y-2 pt-4">
                 <LanguageSwitch />
                 <Button 
-              variant="outline"
-              size="sm"
-              onClick={onQuickQuoteClick || onBookNowClick}
-              className={isScrolled ? 
-                "border-gray-300 bg-white text-gray-700 hover:bg-gray-50" : 
-                "border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50"
-              }
-            >
-              Quick Quote
-            </Button>
-
+                  variant={isScrolled ? "outline" : "secondary"} 
+                  size="sm"
+                  onClick={onQuickQuoteClick || onBookNowClick}
+                  className={isScrolled ? "" : "border-white/30 text-white hover:bg-white/10"}
+                >
+                  {t('header.getQuote')}
+                </Button>
                 <Button 
                   className="bg-primary" 
                   size="sm"

@@ -5,7 +5,7 @@ import { Textarea } from "./ui/textarea";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "motion/react";
 import { toast } from "sonner";
 import { useLanguage } from "../contexts/LanguageContext";
 

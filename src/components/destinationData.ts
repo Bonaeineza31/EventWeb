@@ -1,6 +1,6 @@
 import type { DestinationData } from "../types";
 
-export const destinationsData: DestinationData[] = [
+export const destinationsData: (DestinationData & { testimonial?: { text: string; author: string; role: string } })[] = [
   {
     id: 0,
     name: "Mountain Gorillas",
@@ -24,7 +24,7 @@ export const destinationsData: DestinationData[] = [
       "Professional wildlife photography tips",
       "Certificate of participation in gorilla conservation"
     ],
-    includes: [
+    included: [
       "Gorilla trekking permits ($1,500 value)",
       "Professional guide and ranger fees",
       "Transportation from Kigali",
@@ -34,7 +34,7 @@ export const destinationsData: DestinationData[] = [
       "Certificate of participation",
       "Emergency evacuation insurance"
     ],
-    excludes: [
+    notIncluded: [
       "International flights",
       "Accommodation (can be arranged)",
       "Personal travel insurance",
@@ -104,7 +104,7 @@ export const destinationsData: DestinationData[] = [
       "Photography workshops",
       "Sunset game drives"
     ],
-    includes: [
+    included: [
       "Park entrance fees for all days",
       "Professional safari guide",
       "4WD safari vehicle with pop-up roof",
@@ -114,7 +114,7 @@ export const destinationsData: DestinationData[] = [
       "Transportation from Kigali",
       "Park map and wildlife checklist"
     ],
-    excludes: [
+    notIncluded: [
       "Accommodation (can be arranged)",
       "Meals (unless specified)",
       "Personal travel insurance",
@@ -189,7 +189,7 @@ export const destinationsData: DestinationData[] = [
       "Professional primate guides",
       "Forest conservation education"
     ],
-    includes: [
+    included: [
       "Park entrance and activity fees",
       "Canopy walk permits",
       "Chimpanzee tracking permits",
@@ -199,7 +199,7 @@ export const destinationsData: DestinationData[] = [
       "Bottled water and snacks",
       "Trail maps and species guides"
     ],
-    excludes: [
+    notIncluded: [
       "Accommodation (can be arranged)",
       "Meals outside the park",
       "Personal travel insurance",
@@ -274,7 +274,7 @@ export const destinationsData: DestinationData[] = [
       "Stunning sunset photography",
       "Swimming in bilharzia-free waters"
     ],
-    includes: [
+    included: [
       "Boat cruise and island visits",
       "Coffee plantation tour and tasting",
       "Professional guide services",
@@ -284,7 +284,7 @@ export const destinationsData: DestinationData[] = [
       "Cycling equipment rental",
       "Welcome drink at lakeside resort"
     ],
-    excludes: [
+    notIncluded: [
       "Accommodation (can be arranged)",
       "Meals (except coffee tasting)",
       "Personal travel insurance",
@@ -359,7 +359,7 @@ export const destinationsData: DestinationData[] = [
       "City viewpoints and photo opportunities",
       "Meet local entrepreneurs and innovators"
     ],
-    includes: [
+    included: [
       "Professional city guide",
       "Transportation within Kigali",
       "Entrance fees to all attractions",
@@ -369,7 +369,7 @@ export const destinationsData: DestinationData[] = [
       "Art gallery visits",
       "Hotel pickup and drop-off"
     ],
-    excludes: [
+    notIncluded: [
       "Personal shopping expenses",
       "Additional meals and drinks",
       "Tips for guide and drivers",

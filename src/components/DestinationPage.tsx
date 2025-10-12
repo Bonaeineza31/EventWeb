@@ -16,10 +16,23 @@ import {
   CheckCircle,
   Backpack
 } from "lucide-react";
-import { DestinationData } from "./DestinationDetailModal";
+
+type DestinationType = {
+  name: string;
+  gallery: string[];
+  category?: string;
+  rating?: number | string;
+  location?: string;
+  description?: string;
+  highlights?: string[];
+  itinerary?: { day?: string; title?: string; description?: string }[];
+  packingList?: string[];
+  price?: string;
+  duration?: string;
+};
 
 interface DestinationPageProps {
-  destination: DestinationData;
+  destination: DestinationType;
   onBack: () => void;
   onBookNow: (destination: any) => void;
   onContactExperts: () => void;

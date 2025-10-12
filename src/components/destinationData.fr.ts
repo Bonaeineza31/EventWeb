@@ -1,6 +1,6 @@
 import type { DestinationData } from "../types";
 
-export const destinationsDataFr: DestinationData[] = [
+export const destinationsDataFr:(DestinationData & { testimonial?: { text: string; author: string; role: string } })[] = [
   {
     id: 0,
     name: "Gorilles de Montagne",
@@ -24,7 +24,7 @@ export const destinationsDataFr: DestinationData[] = [
       "Conseils de photographie animalière professionnelle",
       "Certificat de participation à la conservation des gorilles"
     ],
-    includes: [
+    included: [
       "Permis de trekking des gorilles (valeur de 1 500 $)",
       "Frais de guide professionnel et de garde forestier",
       "Transport depuis Kigali",
@@ -34,7 +34,7 @@ export const destinationsDataFr: DestinationData[] = [
       "Certificat de participation",
       "Assurance évacuation d'urgence"
     ],
-    excludes: [
+    notIncluded: [
       "Vols internationaux",
       "Hébergement (peut être organisé)",
       "Assurance voyage personnelle",
@@ -104,7 +104,7 @@ export const destinationsDataFr: DestinationData[] = [
       "Hébergement en lodge de luxe",
       "Guides professionnels de safari"
     ],
-    includes: [
+    included: [
       "Safaris en véhicule 4x4",
       "Safari en bateau sur le lac Ihema",
       "Frais d'entrée au parc",
@@ -114,7 +114,7 @@ export const destinationsDataFr: DestinationData[] = [
       "Eau en bouteille",
       "Jumelles pour l'observation de la faune"
     ],
-    excludes: [
+    notIncluded: [
       "Transport depuis Kigali (peut être organisé)",
       "Boissons alcoolisées",
       "Assurance voyage personnelle",
@@ -189,7 +189,7 @@ export const destinationsDataFr: DestinationData[] = [
       "Guides professionnels de primates",
       "Éducation à la conservation forestière"
     ],
-    includes: [
+    included: [
       "Frais d'entrée au parc et d'activités",
       "Permis de marche en canopée",
       "Permis de suivi des chimpanzés",
@@ -199,7 +199,7 @@ export const destinationsDataFr: DestinationData[] = [
       "Eau en bouteille et collations",
       "Cartes des sentiers et guides des espèces"
     ],
-    excludes: [
+    notIncluded: [
       "Hébergement (peut être organisé)",
       "Repas en dehors du parc",
       "Assurance voyage personnelle",
@@ -274,7 +274,7 @@ export const destinationsDataFr: DestinationData[] = [
       "Couchers de soleil spectaculaires sur le lac",
       "Villages de pêcheurs traditionnels"
     ],
-    includes: [
+    included: [
       "Transport vers le Lac Kivu",
       "Hébergement en hôtel/resort au bord du lac",
       "Visite guidée de plantation de café",
@@ -284,7 +284,7 @@ export const destinationsDataFr: DestinationData[] = [
       "Guide local",
       "Tous les frais de transport"
     ],
-    excludes: [
+    notIncluded: [
       "Repas du déjeuner et du dîner",
       "Boissons alcoolisées",
       "Sports nautiques supplémentaires",
@@ -357,7 +357,7 @@ export const destinationsDataFr: DestinationData[] = [
       "Points de vue de la ville et opportunités photo",
       "Rencontre avec des entrepreneurs et innovateurs locaux"
     ],
-    includes: [
+    included: [
       "Guide professionnel de la ville",
       "Transport dans Kigali",
       "Frais d'entrée à toutes les attractions",
@@ -367,7 +367,7 @@ export const destinationsDataFr: DestinationData[] = [
       "Visites de galeries d'art",
       "Prise en charge et dépôt à l'hôtel"
     ],
-    excludes: [
+    notIncluded: [
       "Dépenses d'achats personnels",
       "Repas et boissons supplémentaires",
       "Pourboires pour le guide et les chauffeurs",

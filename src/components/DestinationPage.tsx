@@ -97,7 +97,7 @@ export function DestinationPage({ destination, onBack, onBookNow, onContactExper
               
               {/* Image Indicators */}
               <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                {destination.gallery.map((_, index) => (
+                {destination.gallery.map((_:any, index:any) => (
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}

@@ -115,7 +115,7 @@ export function ScrollingHeader({ onBookNowClick }: ScrollingHeaderProps) {
 
           <div className="hidden lg:flex items-center space-x-3">
             <Button 
-              variant={isScrolled ? "outline" : "secondary"}
+              variant="ghost"
               size="sm"
               onClick={onBookNowClick}
               className={isScrolled ? "" : "border-white/30 text-white hover:bg-white/10"}
@@ -195,7 +195,7 @@ export function ScrollingHeader({ onBookNowClick }: ScrollingHeaderProps) {
               </button>
               <div className="flex flex-col space-y-2 pt-4">
                 <Button 
-                  variant={isScrolled ? "outline" : "secondary"} 
+                  variant= "ghost" 
                   size="sm"
                   onClick={onBookNowClick}
                   className={isScrolled ? "" : "border-white/30 text-white hover:bg-white/10"}

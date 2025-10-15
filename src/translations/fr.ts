@@ -10,8 +10,8 @@ export const fr = {
 
   // Hero Section
   'hero.tagline': 'Au-delà des Salles de Conférence',
-  'hero.title': 'Découvrez les Merveilles du Rwanda',
-  'hero.subtitle': 'Aventures sur mesure pour les participants aux conférences avec un temps limité. Du trekking des gorilles aux expériences culturelles, profitez au maximum de votre séjour prolongé.',
+  'hero.title': 'Le Rwanda vous attend avec des merveilles',
+  'hero.subtitle': 'Des emblématiques gorilles de montagne du parc national des volcans aux safaris à Akagera, en passant par l\'aventure à couper le souffle de Nyungwe, les visites animées de Kigali, la détente sereine du Lac Kivu et les riches expériences culturelles-il y a toujours quelque chose pour vous.',
   'hero.explorePackages': 'Explorer les Forfaits',
   'hero.quickQuote': 'Devis Rapide',
   'hero.back': 'Retour à l\'Accueil',

@@ -10,8 +10,8 @@ export const en = {
 
   // Hero Section
   'hero.tagline': 'Beyond Conference Halls',
-  'hero.title': 'Discover Rwanda\'s Wonders',
-  'hero.subtitle': 'Tailored adventures for conference attendees with limited time. From gorilla trekking to cultural experiences, make the most of your extended stay.',
+  'hero.title': 'Rwanda Wonder Awaits',
+  'hero.subtitle': 'From the iconic Mountain Gorillas in Volcanoes National Park to the game in Safaris in Akagera, the breathtaking adventure of Nyungwe, vibrant Kigali tours, serene Lake Kivu relaxation, and rich cultural experiences - there\'s always something for you.',
   'hero.explorePackages': 'Explore Packages',
   'hero.quickQuote': 'Get Quick Quote',
   'hero.back': 'Back to Home',
